@@ -1,13 +1,11 @@
 ## General Skills Quiz
 
- ![General Skills Quiz](/DownUnderCTF%202021/General%20Skills%20Quiz.JPG =250x250)
-
  <img src="/DownUnderCTF%202021/General%20Skills%20Quiz.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
-Hint: QUIZ TIME! Just answer the questions. Pretty easy right?
 
---> solve.py for this challenge
-
+- [x] Figure out what to do
+- [ ] Execute the exploit
+- [ ] Drink something
 
 
 ## Task2
