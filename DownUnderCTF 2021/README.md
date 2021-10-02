@@ -45,15 +45,57 @@ But First let us to the best thing:
 
 Fells so good to cross things from lists, i mean to complete the first step.
 
-So based on our google researches and experience with other ctf writeups from the past, we decided to use our favorite :snake: called Py-thron and the frame work [pwntools](https://docs.pwntools.com/en/stable/)
+So based on our google researches and experience with other ctf writeups from the past, we decided to use our favorite :snake: called Py-thron and the frame work [pwntools](https://docs.pwntools.com/en/stable/) Note: pwntools is <u>not</u> installed by default in kali
 
 ```python
 #!/usr/bin/python3
 
 from pwn import *
 ```
+<b>Find the full script under solve.py</b>
 
+We found as always all our answers on github to get started with pwntools [tutorial](https://github.com/Gallopsled/pwntools-tutorial/blob/master/tubes.md) to initialize a session and get a basic understanding how the framework works. So let us extend the script.
+```python
+io = remote('pwn-2021.duc.tf', 31905)
+```
+Based on the first trys we saw that every instruction ends with a ":" followed by the variable to work on. To reflect this behaviour we filtered for the variable by doing this:
+```python
+test = io.recvuntil(": ")
 
+print(test)
+
+test = io.recvline()
+
+print(test[:-1])
+```
+Note: Yes we used a lot of prints cause no one told us that there is an interactive command for the remote object.
+
+At this stage we were able to receive the messages from the server so our structure for sending messages is:
+```python
+io.sendline(variable) 
+```
+With this toolkit we were able to play the game via the script and could start to get the next questions. But before that please have a look into the code snipet for the initial steps (Yes we like our work):
+```python
+#answer for Answer this maths question: 1+1=?
+io.sendline("2")
+#Decode this hex string and provide me the original number (base 10):
+hexvar = int(test[:-1],0)
+print(hexvar)
+hexvar2 = str(hexvar)
+print(hexvar2)
+io.sendline(hexvar2)
+#ecode this hex string and provide me the original ASCII letter:
+hexascii = (test[:-1]).decode("ascii")
+print(hexascii)
+hexasciibyte = bytes.fromhex(hexascii)
+print(hexasciibyte)
+hexascii_string = hexasciibyte.decode("ASCII")
+print(hexascii_string)
+io.sendline(hexascii_string)
+#Decode this URL encoded string and provide me the original ASCII symbols: 
+url = urldecode(test[:-1].decode("utf-8"))
+print(url)
+```
 ## Task2
 
 
