@@ -37,10 +37,21 @@ After playing the games a few more times, we realized that:
 * The given values were randomly generated
 * Manually solving the task is not humanly possible and our mate Kratos was not available <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Kratos_PS4.jpg" alt="Kratos" width="4%" height="4%">
 
-Now we thought the goal is to answer all questions to get the flag. So we needed someone who is smarter and faster than we are and since kratos was still not available /play trombone we settled for the next best thing. 
+Now we thought the goal is to answer all questions to get the flag. So we needed someone who is smarter and faster than we are and since kratos was still not available /play trombone we settled for the next best thing. :computer:
 
+But First let us to the best thing:
 
-[pwntools](https://docs.pwntools.com/en/stable/)
+- [x] Figure out what to do
+
+Fells so good to cross things from lists, i mean to complete the first step.
+
+So based on our google researches and experience with other ctf writeups from the past, we decided to use our favorite :snake: called Py-thron and the frame work [pwntools](https://docs.pwntools.com/en/stable/)
+
+```python
+#!/usr/bin/python3
+
+from pwn import *
+```
 
 
 ## Task2
