@@ -11,7 +11,7 @@
 - [ ] Drink something :tada:
 
 According to the hint we shall answer some easy questions so we started a netcat session as described and see what happens.
-Disclaimer: Never connect to something you don't know. So maybe not the best habbit to have. But what could possible go wrong :AU:
+Disclaimer: Never connect to something you don't know. So maybe not the best habbit to have. But what could possible go wrong :au:
 
 After realizing it doesn't download a virus directly we started the game manually. We managed to reach step 4 before the connection got closed. We received:
 
@@ -35,8 +35,9 @@ After realizing it doesn't download a virus directly we started the game manuall
 After playing the games a few more times, we realized that:
 * The timer at the beginning was no joke \(Yes we were sure that we don't drop the connection on our side\)
 * The given values were randomly generated
-* Manually solving the task is not humanly possible and our body kratos was not available <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Kratos_PS4.jpg" alt="Kratos" width="4%" height="4%">
+* Manually solving the task is not humanly possible and our mate Kratos was not available <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Kratos_PS4.jpg" alt="Kratos" width="4%" height="4%">
 
+Now we thought the goal is to answer all questions to get the flag. So we needed someone who is smarter and faster than we are and since kratos was still not available /play trombone we settled for the next best thing. 
 
 
 [pwntools](https://docs.pwntools.com/en/stable/)
