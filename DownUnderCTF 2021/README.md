@@ -5,7 +5,9 @@
 
 - [x] Figure out what to do
 - [ ] Execute the exploit
-- [ ] Drink something
+- [ ] Drink something :tada:
+
+[pwntools](https://docs.pwntools.com/en/stable/)
 
 
 ## Task2
