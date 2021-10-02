@@ -37,12 +37,7 @@ After playing the games a few more times, we realized that:
 * The given values were randomly generated
 * Manually solving the task is not humanly possible and our mate Kratos was not available <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Kratos_PS4.jpg" alt="Kratos" width="4%" height="4%">
 
-Now we thought the goal is to answer all questions to get the flag. So we needed someone who is smarter and faster than we are and since kratos was still not available 
-<audio id="audio_with_controls" 
-  controls
-  src="https://upload.wikimedia.org/wikipedia/commons/3/35/Sad_Trombone-Joe_Lamb-665429450.ogg" 
-  type="audio/ogg" 
->    </audio> we settled for the next best thing. :computer:
+Now we thought the goal is to answer all questions to get the flag. So we needed someone who is smarter and faster than we are and since kratos was still not available /play trombone we settled for the next best thing. :computer:
 
 But First let us to the best thing:
 
