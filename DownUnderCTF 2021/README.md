@@ -84,18 +84,27 @@ print(hexvar)
 hexvar2 = str(hexvar)
 print(hexvar2)
 io.sendline(hexvar2)
-#ecode this hex string and provide me the original ASCII letter:
+#decode this hex string and provide me the original ASCII letter:
 hexascii = (test[:-1]).decode("ascii")
 print(hexascii)
 hexasciibyte = bytes.fromhex(hexascii)
 print(hexasciibyte)
-hexascii_string = hexasciibyte.decode("ASCII")
+hexascii_string = hexasciibyte.decode("ASCII") #Yes nested functions are not our friends thank you, LOL
 print(hexascii_string)
 io.sendline(hexascii_string)
 #Decode this URL encoded string and provide me the original ASCII symbols: 
 url = urldecode(test[:-1].decode("utf-8"))
 print(url)
+io.sendline(url)
 ```
+So finally we reached our first new questions.
+```python
+#Decode this base64 string and provide me the plaintext: "
+varbase64 = b64d(test[:-1].decode("utf-8"))
+print (varbase64)
+io.sendline(varbase64)
+```
+
 ## Task2
 
 
