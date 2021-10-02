@@ -13,7 +13,7 @@
 According to the hint we shall answer some easy questions so we started a netcat session as described and see what happens.
 Disclaimer: Never connect to something you don't know. So maybe not the best habbit to have. But what could possible go wrong :AU:
 
-After realizing it doesn't download a virus directly we started the game manually. We managed to reach step 4 before the > connection got closed. The following messages we had:
+After realizing it doesn't download a virus directly we started the game manually. We managed to reach step 4 before the connection got closed. We received:
 
 > Welcome to the DUCTF Classroom! Cyber School is now in session!
 > Press enter when you are ready to start your 30 seconds timer for the quiz... 
@@ -31,9 +31,16 @@ After realizing it doesn't download a virus directly we started the game manuall
 > Come on this isn't hard yakka
 > 
 > Decode this URL encoded string and provide me the original ASCII symbols: %21%2A%2B
-> 
-> [pwntools](https://docs.pwntools.com/en/stable/)
-> 
+
+After playing the games a few more times, we realized that:
+* The timer at the beginning was no joke \(Yes we were sure that we don't drop the connection on our side\)
+* The given values were randomly generated
+* Manually solving the task is not humanly possible and our body kratos was not available <img src="https://en.wikipedia.org/wiki/Kratos_(God_of_War)#/media/File:Kratos_PS4.jpg" alt="Kratos" width="20%" height="20%">
+
+
+
+[pwntools](https://docs.pwntools.com/en/stable/)
+
 
 ## Task2
 
