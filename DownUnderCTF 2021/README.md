@@ -1,6 +1,6 @@
 ## General Skills Quiz
 
- ![General Skills Quiz](/DownUnderCTF%202021/General%20Skills%20Quiz.JPG)
+ ![General Skills Quiz](/DownUnderCTF%202021/General%20Skills%20Quiz.JPG =250x250)
 
 Hint: QUIZ TIME! Just answer the questions. Pretty easy right?
 
