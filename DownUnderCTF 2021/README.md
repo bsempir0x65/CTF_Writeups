@@ -35,8 +35,7 @@ After realizing it doesn't download a virus directly we started the game manuall
 After playing the games a few more times, we realized that:
 * The timer at the beginning was no joke \(Yes we were sure that we don't drop the connection on our side\)
 * The given values were randomly generated
-* Manually solving the task is not humanly possible and our body kratos was not available 
-<img src="https://upload.wikimedia.org/wikipedia/en/6/60/Kratos_PS4.jpg" alt="Kratos" width="3%" height="3%">
+* Manually solving the task is not humanly possible and our body kratos was not available <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Kratos_PS4.jpg" alt="Kratos" width="5%" height="5%">
 
 
 
