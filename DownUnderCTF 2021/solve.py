@@ -4,6 +4,7 @@ from pwn import *
 from pwnlib.gdb import binary
 from six import int2byte
 import codecs
+#yeah our dev env adds imports automatically for us. Increased attack vector intended. Thank you
 
 io = remote('pwn-2021.duc.tf', 31905)
 #io.sendline("\n")
