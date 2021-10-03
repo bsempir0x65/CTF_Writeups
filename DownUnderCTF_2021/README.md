@@ -1,6 +1,6 @@
 ## General Skills Quiz
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF%202021/General%20Skills%20Quiz.JPG" alt="General Skills Quiz" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/General%20Skills%20Quiz.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
  As with every Challenge you face in live you start at the beginning. Therefor we came up with the following plan:
 
