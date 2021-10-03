@@ -1,4 +1,4 @@
-## General Skills Quiz
+# General Skills Quiz
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/General%20Skills%20Quiz.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
@@ -180,35 +180,35 @@ After this struggle our first clear and fresh water
 This journey made us realized that on our skill page 2 points in programming and 1 point in google was not the best start for. So our dwarf needs to get back in his cave to start learning more :snake:. Side Note: Gandalf went missing.
 Hopefully our first writeup may help someone to level up and make this world a safer place. ROFL
 
-## Task2
+# Bad Bucket
 
 
 Hint:
 
 Text.....
 
-## Task3
+# Task3
 
 
 Hint:
 
 Text.....
 
-## Task4
+# Task4
 
 
 Hint:
 
 Text.....
 
-## Task5
+# Task5
 
 
 Hint:
 
 Text.....
 
-## Task6
+# Task6
 
 
 Hint:
