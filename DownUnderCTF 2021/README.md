@@ -171,6 +171,12 @@ Bloody Ripper! Here is the grand prize!
    |#|  DUCTF{you_aced_the_quiz!_have_a_gold_star_champion}"
 ```
 - [x] Drink something :tada:
+After this struggle our first clear and fresh water
+
+## Lessons Learned
+
+This journey made us realized that on our skill page 2 points in programming and 1 point in google was not the best start for. So our dwarf needs to get back in his cave to start learning more :snake:. Side Note: Gandalf went missing.
+Hopefully our first writeup may help someone to level up and make this world a safer place. ROFL
 
 ## Task2
 
