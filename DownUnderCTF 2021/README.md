@@ -124,6 +124,48 @@ io.sendline(binvar)
 #Final Question, what is the best CTF competition in the universe?
 io.sendline("DUCTF") #Not sure if you just could use any string
 ```
+- [x] Execute the exploit
+
+Another one from the list. :satisfied: So this time our exploit script did not printed out the next step so we were wondering what happend. Probably we reached the end of the journey and instead of searching for the next colon we searched for the end of a flag with }.
+```python
+test = io.recvuntil("}")
+print(test)
+```
+With this last snippet we finally got our flag. Wohoo 2 hours later and a crash course in python + pwntools brought as our nice flag:
+Bloody Ripper! Here is the grand prize!\n\n\n\n   .^.\n  (( ))\n   |#|_______________________________\n   |#||##############################|\n   |#||##############################|\n   |#||##############################|\n   |#||##############################|\n   |#||########DOWNUNDERCTF##########|\n   |#||########(DUCTF 2021)##########|\n   |#||##############################|\n   |#||##############################|\n   |#||##############################|\n   |#||##############################|\n   |#|'------------------------------'\n   |#|\n   |#|\n   |#|\n   |#|\n   |#|\n   |#|\n   |#|\n   |#|\n   |#|\n   |#|\n   |#|\n   |#|  DUCTF{you_aced_the_quiz!_have_a_gold_star_champion}
+Hmmmmm yeah we still did not know that there was an interactive command. So here is the nice version:
+Bloody Ripper! Here is the grand prize!
+
+
+
+   .^.
+  (( ))
+   |#|_______________________________
+   |#||##############################|
+   |#||##############################|
+   |#||##############################|
+   |#||##############################|
+   |#||########DOWNUNDERCTF##########|
+   |#||########(DUCTF 2021)##########|
+   |#||##############################|
+   |#||##############################|
+   |#||##############################|
+   |#||##############################|
+   |#|'------------------------------'
+   |#|
+   |#|
+   |#|
+   |#|
+   |#|
+   |#|
+   |#|
+   |#|
+   |#|
+   |#|
+   |#|
+   |#|  DUCTF{you_aced_the_quiz!_have_a_gold_star_champion}"
+
+- [x] Drink something :tada:
 
 ## Task2
 
