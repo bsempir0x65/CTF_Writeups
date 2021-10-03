@@ -105,6 +105,24 @@ io.sendline(varbase64)
 varbase64encode = b64e(test[:-1])
 print(varbase64encode)
 io.sendline(varbase64encode)
+#Decode this rot13 string and provide me the plaintext:
+rot13var = codecs.encode(test[:-1].decode("utf-8"), 'rot_13')
+print(rot13var)
+io.sendline(rot13var)
+#Encode this plaintext string and provide me the ROT13 equilavent:
+rot13var2 = codecs.encode(test[:-1].decode("utf-8"), 'rot_13') #Listen and repeat, cause the alphabet i use has 26 characters
+print(rot13var2)
+io.sendline(rot13var2)
+#Decode this binary string and provide me the original number (base 10):
+bitvar = int(test[:-1],2) #Beware binary use as a base log2
+print(bitvar)
+io.sendline(str(bitvar))
+#Encode this number and provide me the binary equivalent:
+binvar = bin(int(test[:-1],0))
+print(binvar)
+io.sendline(binvar)
+#Final Question, what is the best CTF competition in the universe?
+io.sendline("DUCTF") #Not sure if you just could use any string
 ```
 
 ## Task2
