@@ -2,7 +2,7 @@
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/General%20Skills%20Quiz.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
- As with every Challenge you face in live you start at the beginning. Therefor we came up with the following plan:
+ As with every Challenge you face in life you start at the beginning. Therefor we came up with the following plan:
 
 - [ ] Figure out what to do
 - [ ] Execute the exploit
@@ -182,7 +182,7 @@ Hopefully our first writeup may help someone to level up and make this world a s
 
 # Bad Bucket
 
-
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/General%20Skills%20Quiz.JPG" alt="General Skills Quiz" width="50%" height="50%">
 Hint:
 
 Text.....
