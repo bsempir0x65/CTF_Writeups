@@ -182,10 +182,11 @@ Hopefully our first writeup may help someone to level up and make this world a s
 
 # Bad Bucket
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/General%20Skills%20Quiz.JPG" alt="General Skills Quiz" width="50%" height="50%">
-Hint:
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/Bad%20bucket.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
-Text.....
+Our next Journey brings us to the cloud. Based on the hint we were offered a new webside which is under construction is our next step. So with all links sent to us in a black box from a guy called Blue Alder lets check it out.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/Bad%20bucket.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
 # No Strings
 
