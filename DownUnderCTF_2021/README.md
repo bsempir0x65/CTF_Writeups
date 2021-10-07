@@ -196,13 +196,16 @@ Our next Journey brings us to the cloud. Based on the hint we were offered a new
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/bad_bucket_root.png" alt="General Skills Quiz" width="50%" height="50%">
 
+So we saw an interesting file under contents which indicates us that we are on the wrong track cause its not a flag :laughing:.
+We opened [.notaflag](https://storage.googleapis.com/the-bad-bucket-ductf/buckets/.notaflag) nevertheless and found our flag:
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/bad_bucket_flag.png" alt="General Skills Quiz" width="50%" height="50%">
 
 # No Strings
 
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/no%20strings.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
-Hint:
-
-Text.....
+So by now we established a trust between us and DownUnderCTF so we made the given binary executable
 
 # Task4
 
