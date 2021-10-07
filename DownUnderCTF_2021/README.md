@@ -230,8 +230,6 @@ Text.....
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/the_introduction.png" alt="General Skills Quiz" width="50%" height="50%">
 
-https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4
-
 <video controls>
   <source src="https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4" type="video/mp4">
   https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4
