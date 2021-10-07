@@ -186,15 +186,15 @@ Hopefully our first writeup may help someone to level up and make this world a s
 
 Our next Journey brings us to the cloud. Based on the hint we were offered a new webside which is under construction is our next step. So with all links sent to us in a black box from a guy called Blue Alder lets check it out.
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/Bad_bucket_index.png" alt="General Skills Quiz" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/Bad_Bucket_index.png" alt="General Skills Quiz" width="50%" height="50%">
 
  Looking into the site we saw lots of buckets. Also the beep sound was actually working and in its own way different. Checking with the Developer Tools of my browser of choice also didn't reveal any useful information to us. But we saw that we were not redirected and had a direct link to a index.html file so we checked out the classic /admin folder. And we got this:
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/Bad_bucket_admin.png" alt="General Skills Quiz" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/bad_bucket_admin.png" alt="General Skills Quiz" width="50%" height="50%">
 
  So we saw its "who could have guessed" a public bucket in the google cloud. So we then checked the index of the bucket by kicking out the static link to index.html to see the root of the bucket. It's like the always say:" Kick out what doesn't pay any rent!".
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/Bad_bucket_root.png" alt="General Skills Quiz" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/bad_bucket_root.png" alt="General Skills Quiz" width="50%" height="50%">
 
 
 # No Strings
