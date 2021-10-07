@@ -205,7 +205,19 @@ We opened [.notaflag](https://storage.googleapis.com/the-bad-bucket-ductf/bucket
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/no%20strings.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
-So by now we established a trust between us and DownUnderCTF so we made the given binary executable
+So by now we established a trust between us and DownUnderCTF so we made the given binary executable. 
+Disclaimer: Never execute to something you don't know. So maybe not the best habbit to have. But what could possible go wrong :au:
+The programm just asks us in the command window "flag?" and waits for input. Whatever we provide resulted into the output "wrong!" so we started our favorite decompiler [ghidra](https://ghidra-sre.org/). Not sure if its a good but the one we have atleast a bit of experience.
+So we let ghidra analyze the binary and just started to scroll over the decompiled code snippets. Usually we do that to get a feeling how long the programm is but directly saw something interesting.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/no_strings_ghidra.png" alt="General Skills Quiz" width="50%" height="50%">
+
+Our attention was caught directly from this interesting Reference. So we tried it and got the solution. At this point we had no clue why it was there and for what it is intended, but it makes it quite easy if not to many imports are used for a file. 
+Afterwards we checked the main function and saw a reference to a array with the name flag which had as during runtime as content the flag.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/no_strings_ghidra_main.png" alt="General Skills Quiz" width="50%" height="50%">
+
+ So we tried to understand the background of the routine for checking if the input matches the flag. Within 5 minutes it was to tuff to realize the function other than to check that if you type something different than the content of the flag array you receive "wrong!". Maybe check other writeups for help here. LOL
 
 # Task4
 
