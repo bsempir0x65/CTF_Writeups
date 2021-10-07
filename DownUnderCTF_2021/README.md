@@ -196,6 +196,10 @@ Our next Journey brings us to the cloud. Based on the hint we were offered a new
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/bad_bucket_root.png" alt="General Skills Quiz" width="50%" height="50%">
 
+So we saw an interesting file under contents which indicates us that we are on the wrong track cause its not a flag :laughing:
+We opend it nevertheless and found our flag:
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/bad_bucket_flag.png" alt="General Skills Quiz" width="50%" height="50%">
 
 # No Strings
 
