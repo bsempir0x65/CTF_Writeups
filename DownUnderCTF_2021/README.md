@@ -232,11 +232,7 @@ Text.....
 
 https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4
 
-<<<<<<< HEAD
 <video width="75%" height="75%" controls>
-=======
-<video width="50%" height="50%" controls>
->>>>>>> 0dac1095870052f7b011ed1fb1561e0ce1c6a0a4
   <source src="https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4" type="video/mp4">
   https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4
 </video>
