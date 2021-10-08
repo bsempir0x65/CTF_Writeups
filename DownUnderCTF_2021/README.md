@@ -1,8 +1,3 @@
----
-layout: page
-title: DownUnderCTF2021
-permalink: /DownUnderCTF_2021/
----
 # General Skills Quiz
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/General%20Skills%20Quiz.JPG" alt="General Skills Quiz" width="50%" height="50%">
