@@ -1,2 +1,4 @@
 theme: jekyll-theme-hacker
 title: Welcome to the public CTF_Writeups github from team bsempir0x65
+plugins:
+  - jekyll-sitemap
