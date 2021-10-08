@@ -6,10 +6,10 @@
 
 - [ ] Figure out what to do
 - [ ] Execute the exploit
-- [ ] Drink something :tada:
+- [ ] Drink something <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>
 
 According to the hint we shall answer some easy questions so we started a netcat session as described and see what happens.
-Disclaimer: Never connect to something you don't know. So maybe not the best habbit to have. But what could possible go wrong :au:
+Disclaimer: Never connect to something you don't know. So maybe not the best habbit to have. But what could possible go wrong <p> &#x1F1E6&#x1F1FA </p>
 
 After realizing it doesn't download a virus directly we started the game manually. We managed to reach step 4 before the connection got closed. We received:
 
@@ -47,7 +47,7 @@ But First let us to the best thing:
 
 Fells so good to cross things from lists, i mean to complete the first step.
 
-So based on our google researches and experience with other ctf writeups from the past, we decided to use our favorite :snake: called Py-thron and the frame work [pwntools](https://docs.pwntools.com/en/stable/) Note: pwntools is <u>not</u> installed by default in kali
+So based on our google researches and experience with other ctf writeups from the past, we decided to use our favorite <g-emoji class="g-emoji" alias="snake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f40d.png">🐍</g-emoji> called Py-thron and the frame work [pwntools](https://docs.pwntools.com/en/stable/) Note: pwntools is <u>not</u> installed by default in kali
 
 ```python
 #!/usr/bin/python3
@@ -130,7 +130,7 @@ io.sendline("DUCTF") #Not sure if you just could use any string
 ```
 - [x] Execute the exploit
 
-Another one from the list. :satisfied: So this time our exploit script did not printed out the next step so we were wondering what happend. Probably we reached the end of the journey and instead of searching for the next colon we searched for the end of a flag with }.
+Another one from the list. <g-emoji class="g-emoji" alias="laughing" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f606.png">😆</g-emoji> So this time our exploit script did not printed out the next step so we were wondering what happend. Probably we reached the end of the journey and instead of searching for the next colon we searched for the end of a flag with }.
 ```python
 test = io.recvuntil("}")
 print(test)
@@ -172,12 +172,12 @@ Bloody Ripper! Here is the grand prize!
    |#|
    |#|  DUCTF{you_aced_the_quiz!_have_a_gold_star_champion}"
 ```
-- [x] Drink something :tada:
+- [x] Drink something <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>
 After this struggle our first clear and fresh water
 
 ### Lessons Learned
 
-This journey made us realized that on our skill page 2 points in programming and 1 point in google was not the best start for. So our dwarf needs to get back in his cave to start learning more :snake:. Side Note: Gandalf went missing.
+This journey made us realized that on our skill page 2 points in programming and 1 point in google was not the best start for. So our dwarf needs to get back in his cave to start learning more <g-emoji class="g-emoji" alias="snake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f40d.png">🐍</g-emoji>. Side Note: Gandalf went missing.
 Hopefully our first writeup may help someone to level up and make this world a safer place. ROFL
 
 # Bad Bucket
@@ -206,7 +206,7 @@ We opened [.notaflag](https://storage.googleapis.com/the-bad-bucket-ductf/bucket
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/no%20strings.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
 So by now we established a trust between us and DownUnderCTF so we made the given binary executable. 
-Disclaimer: Never execute to something you don't know. So maybe not the best habbit to have. But what could possible go wrong :au:
+Disclaimer: Never execute to something you don't know. So maybe not the best habbit to have. But what could possible go wrong <p> &#x1F1E6&#x1F1FA </p>
 The programm just asks us in the command window "flag?" and waits for input. Whatever we provide resulted into the output "wrong!" so we started our favorite decompiler [ghidra](https://ghidra-sre.org/). Not sure if its a good but the one we have atleast a bit of experience.
 So we let ghidra analyze the binary and just started to scroll over the decompiled code snippets. Usually we do that to get a feeling how long the programm is but directly saw something interesting.
 
@@ -226,7 +226,7 @@ Afterwards we checked the main function and saw a reference to a array with the 
  This time we went to the Open source intelegence area and starts with the important part again (tasks list are so anti agial):
 - [ ] Read the Disclaimer
 - [ ] Figure out what to do
-- [ ] Drink something :tada:
+- [ ] Drink something <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>
 
 So after a quick read we realized that calling the police in Australia will not bring us any benefit for the challenge so 
 - [x] Read the Disclaimer
@@ -250,9 +250,10 @@ Back at the tavern we realized we brought value in the world and crossed our nex
 
 Happily we ordered 
 
-- [x] Drink something :tada:
+- [x] Drink something <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>
 
 and listen to our favorite spotify model while we wait for our next story to sprint/chase after.
+
 P.S: We could also make an Offer on namecheap which probably none could have declined.
 
 # The Introduction
@@ -265,12 +266,3 @@ https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-
   <source src="https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4" type="video/mp4">
   https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4
 </video>
-
-# Task6
-
-
-Hint:
-
-Text.....
-
----
