@@ -219,12 +219,37 @@ Afterwards we checked the main function and saw a reference to a array with the 
 
  So we tried to understand the background of the routine for checking if the input matches the flag. Within 5 minutes it was to tuff to realize the function other than to check that if you type something different than the content of the flag array you receive "wrong!". Maybe check other writeups for help here. LOL
 
-# Task4
+# Who goes there?
 
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/Who%20goes%20there.jpg" alt="General Skills Quiz" width="50%" height="50%">
 
-Hint:
+ This time we went to the Open source intelegence area and starts with the important part again (tasks list are so anti agial):
+- [ ] Read the Disclaimer
+- [ ] Figure out what to do
+- [ ] Drink something :tada:
 
-Text.....
+So after a quick read we realized that calling the police in Australia will not bring us any benefit for the challenge so 
+- [x] Read the Disclaimer
+First one down.
+
+We saw that an domain was given in the Quest for our journey trough the Internet. We also saw that the format of the Flag started with +61 which gave us the impression that we probably have to find a phone number. So how is a phone number linked to an domain ? In multiple ways so lets our Epic begin ( ᐛ )و.
+
+So we first started to check the ripe entry for the domain by making a whois query for 646f776e756e646572.xyz. There are multiple ways to do it we usually just use [ping.eu](https://ping.eu/). After a quick query we got the following:
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/who_goes_there_ping.png" alt="General Skills Quiz" width="50%" height="50%">
+
+We saw that our first Sprint (￣∠ ￣ )ﾉ did not went well and the contacts were truncated. So we continued our Epic knowing full well we could end up in a Saga. So we had the idea to check the whois query from the actual registrant provider cause some times these system has more informations. So we try now this bold move to keep our Epic alive ヽ(#ﾟДﾟ)ﾉ┌┛.
+Atleast this information we got from our query so we opened [whois.namecheap.com](http://whois.namecheap.com/), which actually took ages to respond ( ｰ̀εｰ́ ).
+So Luckely we have a search engine and found out that the actual whois link from namecheap is [https://www.namecheap.com/domains/whois/](https://www.namecheap.com/domains/whois/). Seems that not everyone keeps up the docu, so we know they are one of us.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/who_goes_there_namecheap.png" alt="General Skills Quiz" width="50%" height="50%">
+
+So lets see what comes out of our bold move ... hmm as we can see we got more informations now (*^▽^*) . When we check the Number of the Registrant it matches the beginning of the format of the flag and :boom: we got the intel. Luckely we did not had to form an alliance for this Story/journey and were able to close the Epic and return to our guild to enjoy our story with our fellers.
+Back at the tavern we realized we brought value in the world and crossed our next step:
+- [x] Figure out what to do
+Happily we ordered 
+- [x] Drink something :tada:
+and listen to our favorite spotify model while we wait for our next story to sprint/chase after.
 
 # The Introduction
 
