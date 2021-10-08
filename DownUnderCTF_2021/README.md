@@ -9,7 +9,7 @@
 - [ ] Drink something <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>
 
 According to the hint we shall answer some easy questions so we started a netcat session as described and see what happens.
-Disclaimer: Never connect to something you don't know. So maybe not the best habbit to have. But what could possible go wrong <p> &#x1F1E6&#x1F1FA </p>
+Disclaimer: Never connect to something you don't know. So maybe not the best habbit to have. But what could possible go wrong :australia:
 
 After realizing it doesn't download a virus directly we started the game manually. We managed to reach step 4 before the connection got closed. We received:
 
@@ -206,7 +206,7 @@ We opened [.notaflag](https://storage.googleapis.com/the-bad-bucket-ductf/bucket
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/no%20strings.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
 So by now we established a trust between us and DownUnderCTF so we made the given binary executable. 
-Disclaimer: Never execute to something you don't know. So maybe not the best habbit to have. But what could possible go wrong <p> &#x1F1E6&#x1F1FA </p>
+Disclaimer: Never execute to something you don't know. So maybe not the best habbit to have. But what could possible go wrong :australia:
 The programm just asks us in the command window "flag?" and waits for input. Whatever we provide resulted into the output "wrong!" so we started our favorite decompiler [ghidra](https://ghidra-sre.org/). Not sure if its a good but the one we have atleast a bit of experience.
 So we let ghidra analyze the binary and just started to scroll over the decompiled code snippets. Usually we do that to get a feeling how long the programm is but directly saw something interesting.
 
