@@ -31,7 +31,9 @@
 
     <div class="container">
       <nav>
-          <ul></ul>
+          {% for item in site.data.navigation %}
+              <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>{{ item.name }}</a>
+          {% endfor %}
       </nav>
       <section id="main_content">
         {{ content }}
