@@ -223,7 +223,7 @@ Afterwards we checked the main function and saw a reference to a array with the 
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/Who%20goes%20there.JPG" alt="General Skills Quiz" width="50%" height="50%">
 
- This time we went to the Open source intelegence area and starts with the important part again (tasks list are so anti agial):
+ This time we went to the Open source intelegence area and starts with the important part again (task lists are so anti agial):
 - [ ] Read the Disclaimer
 - [ ] Figure out what to do
 - [ ] Drink something <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>
@@ -238,9 +238,9 @@ So we first started to check the ripe entry for the domain by making a whois que
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/who_goes_there_ping.png" alt="General Skills Quiz" width="50%" height="50%">
 
-We saw that our first Sprint (￣∠ ￣ )ﾉ did not went well and the contacts were truncated. So we continued our Epic knowing full well we could end up in a Saga. So we had the idea to check the whois query from the actual registrant provider cause some times these system has more informations. So we try now this bold move to keep our Epic alive ヽ(#ﾟДﾟ)ﾉ┌┛.
-Atleast this information we got from our query so we opened [whois.namecheap.com](http://whois.namecheap.com/), which actually took ages to respond ( ｰ̀εｰ́ ).
-So Luckely we have a search engine and found out that the actual whois link from namecheap is [https://www.namecheap.com/domains/whois/](https://www.namecheap.com/domains/whois/). Seems that not everyone keeps up the docu, so we know they are one of us.
+We saw that our first Sprint (￣∠ ￣ )ﾉ did not went well and the contacts were truncated. So we continued our Epic knowing full well we could end up in a Saga. So we had the idea to check the whois query from the actual registrant provider because sometimes these systems have more information. So we now try this bold move to keep our Epic alive ヽ(#ﾟДﾟ)ﾉ┌┛.
+Atleast we got this information from our query so we opened [whois.namecheap.com](http://whois.namecheap.com/), which actually took ages to respond ( ｰ̀εｰ́ ).
+It was pure luck we had a search engine and found out that the actual whois link from namecheap is [https://www.namecheap.com/domains/whois/](https://www.namecheap.com/domains/whois/). Seems that not everyone keeps up the docu, so we know they are one of us.
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/DownUnderCTF_2021/img/who_goes_there_namecheap.png" alt="General Skills Quiz" width="50%" height="50%">
 
