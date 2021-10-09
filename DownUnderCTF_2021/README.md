@@ -269,9 +269,9 @@ https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-
 
 ---
 
-So these are our first Writeups and the next step in becomeing something with Cyber Cyber.
-Along the way we created all this we also did the following:
+So these are our first writeups and the next step is becoming something with cyber cyber.
+Along the way while we created all this we also did the following:
 - [x] Create github Repo for the future
 - [x] Set the repo to use github pages
 - [ ] Understand how github pages works
-So for the last part we are not the best with web design but maybe in the future we can figure this out too.
+So for the last part we are not the best with web design but maybe in the future we can figure this out too. ;)
