@@ -266,3 +266,12 @@ https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-
   <source src="https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4" type="video/mp4">
   https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4
 </video>
+
+---
+
+So these are our first Writeups and the next step in becomeing something with Cyber Cyber.
+Along the way we created all this we also did the following:
+- [x] Create github Repo for the future
+- [x] Set the repo to use github pages
+- [ ] Understand how github pages works
+So for the last part we are not the best with web design but maybe in the future we can figure this out too.
