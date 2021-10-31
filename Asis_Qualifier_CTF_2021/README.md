@@ -4,7 +4,7 @@ This time we faced our first CTF which was a qualifier to find the top teams in 
 
 # Factory
 
- <img src="factory" alt="factory" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory.png" alt="factory" width="50%" height="50%">
 
 We were presented with a binary and the hint :
 
@@ -12,7 +12,7 @@ We were presented with a binary and the hint :
 
 The binary had a pdf header and was also able to be opened by libre office. The only word we saw in it was **Real-World Misco-graphy**. 
 
- <img src="factory_libre" alt="factory" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory_libre.png" alt="factory_libre" width="50%" height="50%">
  
 Cause this was also the hint in the Challenge description we started to google it. We only found unusful garbage like this [Misco-graphy](https://www.facebook.comMISCO.Refractometer/). So still no clue whats the deal with Misco-graphy but we were sure that we have something embeded in the file, cause thats the way our evilfriends hide whatever they want.
 So we used binwalk to check if any other files based on their header were in the pdf. So we ran binwalk.
@@ -48,7 +48,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 So yeah there were definitly more insight so we let binwalk extract with -e everything and had a look into it. We found with a simple String search for **ASIS** that the first stream 0x4C was the only one matching.
 So we opened the file in our favorite text editor (kidding just my favorite Text editor):
 
-<img src="factory_text" alt="factory" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory_text.png" alt="factory_text" width="50%" height="50%">
 
 Based on the words we see here that probably it was an PDF in PDF, but no clue how to recover the header for that. Probably binwalk was not the right Tool to beginn with. Regardless we figured out that everything in the format [\(...\)] was part of the searched flag. Also based on the Welcome Flag we knew that the words must be linked together via _ . So we conculuded that empty brackets mean _ and after some text transformations we had:
 **ASIS{PDF_1N_PDF_iZ_A_T4sK_fOR_fOreEnSic5_L0v3RS}**
@@ -57,7 +57,7 @@ We pasted it into the webside and voila we got our first and only challenge for 
 
 # Welcome
 
-<img src="Welcome" alt="Welcome" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/Asis_Welcome.png" alt="Welcome" width="50%" height="50%">
 
 This was not really a challenge. You should just read the rules under [https://asisctf.com/rules](https://asisctf.com/rules) and we found at the end the flag:
 **ASIS{W3lc0me_t0_The_ASIS_CTF_Mad3_w1th_L0ve}**
