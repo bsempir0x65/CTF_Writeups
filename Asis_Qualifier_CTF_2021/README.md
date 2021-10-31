@@ -7,13 +7,15 @@ This time we faced our first CTF which was a qualifier to find the top teams in 
  <img src="factory" alt="factory" width="50%" height="50%">
 
 We were presented with a binary and the hint :
+
 > misco-graphy is the ratio of output to input!
+
 The binary had a pdf header and was also able to be opened by libre office. The only word we saw in it was **Real-World Misco-graphy**. 
 
  <img src="factory_libre" alt="factory" width="50%" height="50%">
  
 Cause this was also the hint in the Challenge description we started to google it. We only found unusful garbage like this [Misco-graphy](https://www.facebook.comMISCO.Refractometer/). So still no clue whats the deal with Misco-graphy but we were sure that we have something embeded in the file, cause thats the way our evilfriends hide whatever they want.
-So we used binwalk to check if any other files based on their header were in the pdf. So we ran
+So we used binwalk to check if any other files based on their header were in the pdf. So we ran binwalk.
 ```console
 # binwalk factory.pdf
 
