@@ -4,7 +4,7 @@ This time we faced our first CTF which was a qualifier to find the top teams in 
 
 # Factory
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory.png" alt="factory" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory.png" alt="factory" width="75%" height="75%">
 
 We were presented with a binary and the hint :
 
@@ -12,7 +12,7 @@ We were presented with a binary and the hint :
 
 The binary had a pdf header and was also able to be opened by libre office. The only word we saw in it was **Real-World Misco-graphy**. 
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory_libre.png" alt="factory_libre" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory_libre.png" alt="factory_libre" width="75%" height="75%">
  
 Cause this was also the hint in the Challenge description we started to google it. We only found unusful garbage like this [Misco-graphy](https://www.facebook.comMISCO.Refractometer/). So still no clue whats the deal with Misco-graphy but we were sure that we have something embeded in the file, cause thats the way our evilfriends hide whatever they want.
 So we used binwalk to check if any other files based on their header were in the pdf. So we ran binwalk.
