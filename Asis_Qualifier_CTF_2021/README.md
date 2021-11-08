@@ -1,6 +1,6 @@
 # Disclaimer
 
-This time we faced our first CTF which was a qualifier to find the top teams in da worldz. We know that it would be tuff and it was tuff. We only managed to crack one challenge and we were not even sure if we did it right, so happy to see other solutions also
+This time we faced our first CTF which was a qualifier to find the top teams in da worldz. We know that it would be tough and it was tough. We only managed to crack one challenge and we were not even sure if we did it right, so we are looking forward to see other solutions as well.
 
 # Factory
 
@@ -14,8 +14,8 @@ The binary had a pdf header and was also able to be opened by libre office. The 
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory_libre.png" alt="factory_libre" width="75%" height="75%">
  
-Cause this was also the hint in the Challenge description we started to google it. We only found unusful garbage like this [Misco-graphy](https://www.facebook.comMISCO.Refractometer/). So still no clue whats the deal with Misco-graphy but we were sure that we have something embeded in the file, cause thats the way our evilfriends hide whatever they want.
-So we used binwalk to check if any other files based on their header were in the pdf. So we ran binwalk.
+Because this was also the hint in the challenge description we started to google it. We only found unuseful garbage like this [Misco-graphy](https://www.facebook.comMISCO.Refractometer/). So still no clue what's the deal with Misco-graphy but we were sure that we have something embeded in the file, because thats the way our evil friends hide whatever they want.
+Then we used binwalk to check if any other files based on their header were in the pdf. So we ran binwalk.
 ```console
 # binwalk factory.pdf
 
@@ -45,20 +45,20 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 93705         0x16E09         Zlib compressed data, default compression
 
 ```
-So yeah there were definitly more insight so we let binwalk extract with -e everything and had a look into it. We found with a simple String search for **ASIS** that the first stream 0x4C was the only one matching.
+Yeah there were definitly more insights so we let binwalk extract with -e for everything and had a look into it. We found with a simple string search for **ASIS** that the first stream 0x4C was the only one matching.
 So we opened the file in our favorite text editor (kidding just my favorite Text editor):
 
 <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory_text.png" alt="factory_text" width="75%" height="75%">
 
-Based on the words we see here that probably it was an PDF in PDF, but no clue how to recover the header for that. Probably binwalk was not the right Tool to beginn with. Regardless we figured out that everything in the format [\(...\)] was part of the searched flag. Also based on the Welcome Flag we knew that the words must be linked together via _ . So we conculuded that empty brackets mean _ and after some text transformations we had:
+Based on the words we see here it was probably a PDF in a PDF, but we have no clue how to recover the header for that. Probably binwalk was not the right tool to beginn with. Regardless we figured out that everything in the format [\(...\)] was part of the searched flag. Also based on the Welcome Flag we knew that the words must be linked together via _ . So we conculuded that empty brackets mean _ and after some text transformations we had:
 **ASIS{PDF_1N_PDF_iZ_A_T4sK_fOR_fOreEnSic5_L0v3RS}**
 
-We pasted it into the webside and voila we got our first and only challenge for the evening. We knew that there are better ways to solve this challenge, but many roads let to rome. Happy to see other Solutions to get an idea how data extraction with pdfs works in general. Cause would this be a real challenge we would not have had the hints that we are searching for a string with ASIS{..._..} and we did not had a valid secon pdf. But only 250 Teams had this solution at the end of the day so we were happy.
+We pasted it into the webside and voila we got our first and only challenge for the evening solved. We knew that there are better ways to solve this challenge, but many roads lead to rome. Looking forward to reading other solutions to get an idea how data extraction with pdfs works in general. Because if this had been a real challenge we would not have had the hint that we are searching for a string with ASIS{..._..} and we wouldn't have had a valid second pdf. But only 250 Teams had this challenge at the end of the day so we are happy.
 
 # Welcome
 
 <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/Asis_Welcome.png" alt="Welcome" width="75%" height="75%">
 
-This was not really a challenge. You should just read the rules under [https://asisctf.com/rules](https://asisctf.com/rules) and we found at the end the flag:
+This was not really a challenge. You just had to read the rules under [https://asisctf.com/rules](https://asisctf.com/rules) and find the flag at the end:
 **ASIS{W3lc0me_t0_The_ASIS_CTF_Mad3_w1th_L0ve}**
-But the important part was that we knew now that all flags start with ASIS{ and the string inside the brackets are most likely connected with underscores. This was actually helpful for the only challenge we managed to finish.
+But the important part was that we knew now that all flags start with ASIS{ and the string inside the brackets are most likely connected with underscores. This was actually helpful for the only challenge we managed to solve.
