@@ -48,7 +48,7 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 So yeah there were definitly more insight so we let binwalk extract with -e everything and had a look into it. We found with a simple String search for **ASIS** that the first stream 0x4C was the only one matching.
 So we opened the file in our favorite text editor (kidding just my favorite Text editor):
 
-<img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory_text.png" alt="factory_text" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/factory_text.png" alt="factory_text" width="75%" height="75%">
 
 Based on the words we see here that probably it was an PDF in PDF, but no clue how to recover the header for that. Probably binwalk was not the right Tool to beginn with. Regardless we figured out that everything in the format [\(...\)] was part of the searched flag. Also based on the Welcome Flag we knew that the words must be linked together via _ . So we conculuded that empty brackets mean _ and after some text transformations we had:
 **ASIS{PDF_1N_PDF_iZ_A_T4sK_fOR_fOreEnSic5_L0v3RS}**
@@ -57,7 +57,7 @@ We pasted it into the webside and voila we got our first and only challenge for 
 
 # Welcome
 
-<img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/Asis_Welcome.png" alt="Welcome" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Asis_Qualifier_CTF_2021/img/Asis_Welcome.png" alt="Welcome" width="75%" height="75%">
 
 This was not really a challenge. You should just read the rules under [https://asisctf.com/rules](https://asisctf.com/rules) and we found at the end the flag:
 **ASIS{W3lc0me_t0_The_ASIS_CTF_Mad3_w1th_L0ve}**
