@@ -1,3 +1,10 @@
-theme: jekyll-theme-hacker
+#theme: jekyll-theme-hacker
 title: team bsempir0x65
-description:: Welcome to the public CTF_Writeups github from team bsempir0x65
+description: Welcome to the public CTF_Writeups github from team bsempir0x65
+
+#plugins
+plugins:
+  - jekyll-include-cache
+
+remote_theme: "mmistakes/minimal-mistakes" #@4.24.0"
+minimal_mistakes_skin: "dark"
