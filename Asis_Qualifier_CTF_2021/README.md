@@ -1,13 +1,3 @@
----
-layout: splash
-classes:
-  - landing
-  - dark-theme
-toc: true
-toc_label: "My Table of Contents"
----
-
-
 # Disclaimer
 
 This time we faced our first CTF which was a qualifier to find the top teams in da worldz. We know that it would be tough and it was tough. We only managed to crack one challenge and we were not even sure if we did it right, so we are looking forward to see other solutions as well.
