@@ -1,15 +1,8 @@
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
+---
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
+---
 
 
 # Disclaimer
