@@ -20,7 +20,7 @@ So the flag based on the format is KCTF{192.99.167.83}. Wuhhu nice first 5 minut
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Keep_Calculating.png" alt="Keep Calculating" width="50%" height="50%">
 
-With the Programming tasks we had some issues cause it was not quite clear how the functions needs to be implemented. So for example when you take the task here based on the math x would never change so how do you reach 666 ? Regardless of this issue our Math Magicians  	:magic_wand:  	🪄 solved the task with no issues. Hope this little neat code can also help you.
+With the Programming tasks we had some issues cause it was not quite clear how the functions needs to be implemented. So for example when you take the task here based on the math x would never change so how do you reach 666 ? Regardless of this issue our Math Magicians :magic_wand: solved the task with no issues. Hope this little neat code can also help you.
 
 ```python
 def f(x, y):
@@ -54,14 +54,14 @@ print(f(1,2))
 calc(a, x, y)
 ```
 
-P.S: Yes the import is missing and flag is *KCTF{90}* 
+P.S: Yes the import is missing and the flag is *KCTF{90}* 
 
 # Square Sum
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Square_Sum.png" alt="Square Sum" width="50%" height="50%">
 
 Here we had kind of the same issue but it was more or less clear what we were searching. So our magician swang his wand and we have this time R code:
-```{r}
+```r
 myfunction <- function(n) {
   out <- NULL
   for(a in 1:floor(sqrt(n))) {
@@ -101,15 +101,11 @@ Again a quick search and we tool the first online 3mf viewer:
 Whatever that was, was not helpful. So we tried the next Tool and found something really helpful[3mf viewer](https://3dviewer.net/):
 
 <video width="75%" height="75%" controls>
-  <source src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon_1.mp4" type="video/mp4">
-  https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon_1.mp4
+  <source src="https://user-images.githubusercontent.com/87261585/151245913-7f715f6f-abbc-4824-8a34-82d22da59510.mp4" type="video/mp4">
+  https://user-images.githubusercontent.com/87261585/151245913-7f715f6f-abbc-4824-8a34-82d22da59510.mp4
 </video>
 
 As you could see we just needed to count the doughnut and sweets we found here which was pretty easy now. Based on the Flag format the flag was *KCTF{3_doughnut_and_11_sweet}*. We never did something with 3D prints but now we now how to read time, :stars: Now you know :stars: .
-
-
-https://user-images.githubusercontent.com/87261585/151245913-7f715f6f-abbc-4824-8a34-82d22da59510.mp4
-
 
 # Conclusion
 
