@@ -10,7 +10,7 @@ As with most of the OSINT we started with a little search. Based on the given in
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Canada_Server_1.png" alt="Google Search" width="50%" height="50%">
 
-So the flag based on the format is KCTF{192.99.167.83}. Wuhhu nice first 5 minutes of the event :robot:.
+So the flag based on the format is KCTF{192.99.167.83}. Wuhhu nice first 5 minutes of the event <img class="emoji" alt="robot" src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png" width="20" height="20">.
 
 # How's the Shark
 
@@ -20,7 +20,7 @@ So the flag based on the format is KCTF{192.99.167.83}. Wuhhu nice first 5 minut
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Keep_Calculating.png" alt="Keep Calculating" width="50%" height="50%">
 
-With the Programming tasks we had some issues cause it was not quite clear how the functions needs to be implemented. So for example when you take the task here based on the math x would never change so how do you reach 666 ? Regardless of this issue our Math Magicians :magic_wand: solved the task with no issues. Hope this little neat code can also help you.
+With the Programming tasks we had some issues cause it was not quite clear how the functions needs to be implemented. So for example when you take the task here based on the math x would never change so how do you reach 666 ? Regardless of this issue our Math Magicians <img class="emoji" alt="magic_wand" src="https://github.githubassets.com/images/icons/emoji/unicode/1fa84.png" width="20" height="20"> solved the task with no issues. Hope this little neat code can also help you.
 
 ```python
 def f(x, y):
@@ -79,9 +79,9 @@ So the flag was *KCTF{90}*
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Flag_Vault.png" alt="The Flag Vault" width="50%" height="50%">
 
-This one was a tricky one. So after checking the event other solutions out it seems that the cool kids just us IDA and that's it. But we were clever enough to try it differently. Gimme the power Hydra :snake:.
+This one was a tricky one. So after checking the event other solutions out it seems that the cool kids just us IDA and that's it. But we were clever enough to try it differently. Gimme the power Hydra <img class="emoji" alt="snake" src="https://github.githubassets.com/images/icons/emoji/unicode/1f40d.png" width="20" height="20">.
 
-  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Flag_Vault_1.png" alt="Ghidra" width="50%" height="50%">
+  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Flag_Vault_1.png" alt="Ghidra" width="75%" height="75%">
 
 We saw in the decompiler view that it seemed to be an easy check wether you have the password or not. The password is stored in local_28 we thought at least. So ghidra said that in local_28 *adacarba* is saved. Silly us is that it was meant to be read from the end to the beginning. So it should be *abracada* read. We figured that afterwards out by checking the hexview of the file. But we could not figure out why local_20 was also part of the searched string. We guessed it after the event we went back to the hexview. So we have a new entry in our bucket list
 
@@ -93,12 +93,14 @@ So what we did was going over all the variables in the Congratulation part of th
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon.png" alt="The Hungry Dragon" width="50%" height="50%">
 
-For this one we got an .3mf file, which we had no clue for what it is. After a quick search it turned out that .3mf files are used for 3D printers to print what ever you want[3mf](https://en.wikipedia.org/wiki/3D_Manufacturing_Format). According to our search its xml based but not readable with a text editor. 
+For this one we got an .3mf file, which we had no clue for what it is. After a quick search it turned out that .3mf files are used for 3D printers to print what ever you want [3mf](https://en.wikipedia.org/wiki/3D_Manufacturing_Format). According to our search its xml based but not readable with a text editor. 
 Again a quick search and we tool the first online 3mf viewer:
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon_1.png" alt="The Hungry Dragon" width="50%" height="50%">
 
-Whatever that was, was not helpful. So we tried the next Tool and found something really helpful[3mf viewer](https://3dviewer.net/):
+Whatever that was, was not helpful. So we tried the next Tool and found something really helpful [3mf viewer](https://3dviewer.net/):
+
+https://user-images.githubusercontent.com/87261585/151245913-7f715f6f-abbc-4824-8a34-82d22da59510.mp4
 
 <video width="75%" height="75%" controls>
   <source src="https://user-images.githubusercontent.com/87261585/151245913-7f715f6f-abbc-4824-8a34-82d22da59510.mp4" type="video/mp4">
