@@ -8,7 +8,7 @@ A new Year a new CTF to challenge. This time we went to Bangladesh :bd: and foun
 
 As with most of the OSINT we started with a little search. Based on the given informations from the task we tried *NS TechValley Canada* and without further search we already had our first hit, literally.
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Canada_Server.png" alt="General Skills Quiz" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Canada_Server_1.png" alt="Google Search" width="50%" height="50%">
 
 So the flag based on the format is KCTF{192.99.167.83}. Wuhhu nice first 5 minutes of the event :robot:.
 
@@ -81,7 +81,7 @@ So the flag was *KCTF{90}*
 
 This one was a tricky one. So after checking the event other solutions out it seems that the cool kids just us IDA and that's it. But we were clever enough to try it differently. Gimme the power Hydra :snake:.
 
-  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Flag_Vault.png" alt="General Skills Quiz" width="50%" height="50%">
+  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Flag_Vault_1.png" alt="Ghidra" width="50%" height="50%">
 
 We saw in the decompiler view that it seemed to be an easy check wether you have the password or not. The password is stored in local_28 we thought at least. So ghidra said that in local_28 *adacarba* is saved. Silly us is that it was meant to be read from the end to the beginning. So it should be *abracada* read. We figured that afterwards out by checking the hexview of the file. But we could not figure out why local_20 was also part of the searched string. We guessed it after the event we went back to the hexview. So we have a new entry in our bucket list
 
@@ -96,13 +96,13 @@ So what we did was going over all the variables in the Congratulation part of th
 For this one we got an .3mf file, which we had no clue for what it is. After a quick search it turned out that .3mf files are used for 3D printers to print what ever you want[3mf](https://en.wikipedia.org/wiki/3D_Manufacturing_Format). According to our search its xml based but not readable with a text editor. 
 Again a quick search and we tool the first online 3mf viewer:
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon.png" alt="The Hungry Dragon" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon_1.png" alt="The Hungry Dragon" width="50%" height="50%">
 
 Whatever that was, was not helpful. So we tried the next Tool and found something really helpful[3mf viewer](https://3dviewer.net/):
 
 <video width="75%" height="75%" controls>
-  <source src="https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4" type="video/mp4">
-  https://user-images.githubusercontent.com/87261585/136456472-b33a124c-1fd1-4d53-963f-a41100a5b599.mp4
+  <source src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon_1.mp4" type="video/mp4">
+  https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon_1.mp4
 </video>
 
 As you could see we just needed to count the doughnut and sweets we found here which was pretty easy now. Based on the Flag format the flag was *KCTF{3_doughnut_and_11_sweet}*. We never did something with 3D prints but now we now how to read time, :stars: Now you know :stars: .
