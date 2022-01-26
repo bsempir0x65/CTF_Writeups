@@ -54,7 +54,7 @@ print(f(1,2))
 calc(a, x, y)
 ```
 
-P.S: Yes the import is missing and the flag is *KCTF{90}* 
+P.S: Yes the import is missing and the flag is *KCTF{2666664}* 
 
 # Square Sum
 
@@ -73,7 +73,7 @@ myfunction <- function(n) {
   return(out)
 }
 ```
-So the flag was *KCTF{90}*  
+So the flag was *KCTF{90,130}*  
 
 # The Flag Vault
 
@@ -107,7 +107,7 @@ https://user-images.githubusercontent.com/87261585/151245913-7f715f6f-abbc-4824-
   https://user-images.githubusercontent.com/87261585/151245913-7f715f6f-abbc-4824-8a34-82d22da59510.mp4
 </video>
 
-As you could see we just needed to count the doughnut and sweets we found here which was pretty easy now. Based on the Flag format the flag was *KCTF{3_doughnut_and_11_sweet}*. We never did something with 3D prints but now we now how to read time, :stars: Now you know :stars: .
+As you could see we just needed to count the doughnut and sweets we found here which was pretty easy now. Based on the Flag format the flag was *KCTF{3_doughnut_and_11_sweet}*. We never did something with 3D prints but now we now how to read time, <img class="emoji" alt="stars" src="https://github.githubassets.com/images/icons/emoji/unicode/1f320.png" width="20" height="20"> Now you know <img class="emoji" alt="stars" src="https://github.githubassets.com/images/icons/emoji/unicode/1f320.png" width="20" height="20"> .
 
 # Conclusion
 
