@@ -1,6 +1,6 @@
 # Introduction
 
-A new Year a new CTF to challenge. This time we went to Bangladesh :bangladesh: and found a neat little ctf with some easy tasks which gave us a nice exercise. Hope you could enjoy it too despite the issues in the beginning.
+A new Year a new CTF to challenge. This time we went to Bangladesh <img class="emoji" alt="bangladesh" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1e9.png" width="20" height="20"> and found a neat little ctf with some easy tasks which gave us a nice exercise. Hope you could enjoy it too despite the issues in the beginning.
 
 # Canada Server
 
