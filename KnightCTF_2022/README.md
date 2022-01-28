@@ -1,4 +1,4 @@
-# Introduction
+# <a name="Introduction"></a>Introduction
 
 A new Year a new CTF to challenge. This time we went to Bangladesh <img class="emoji" alt="bangladesh" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1e9.png" width="20" height="20"> and found a neat little ctf with some easy tasks which gave us a nice exercise. Hope you could enjoy it too despite the issues in the beginning.
 
@@ -95,7 +95,7 @@ This one was a tricky one. So after checking the event other solutions out it se
 
 We saw in the decompiler view that it seemed to be an easy check wether you have the password or not. The password is stored in local_28 we thought at least. So ghidra said that in local_28 *adacarba* is saved. Silly us is that it was meant to be read from the end to the beginning. So it should be *abracada* read. We figured that afterwards out by checking the hexview of the file. But we could not figure out why local_20 was also part of the searched string. We guessed it after the event we went back to the hexview. So we have a new entry in our bucket list
 
-[ ] Figure out how assembler works
+ - [ ] Figure out how assembler works
 
 So what we did was going over all the variables in the Congratulation part of the Programm and ended up with the flag *KCTF{welc0me_t0_reverse_3ngineering}*. So yeah we did not had the password but the patiences to go over each variable and check the value in it. Lucky us each variable was only one character so it did not matter which way you read out the Hex value.
 
