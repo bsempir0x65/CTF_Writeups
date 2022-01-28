@@ -2,7 +2,7 @@
 
 A new Year a new CTF to challenge. This time we went to Bangladesh <img class="emoji" alt="bangladesh" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1e7-1f1e9.png" width="20" height="20"> and found a neat little ctf with some easy tasks which gave us a nice exercise. Hope you could enjoy it too despite the issues in the beginning.
 
-# Canada Server
+# <a name="Canada_Server"></a>Canada Server
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Canada_Server.png" alt="Canada Server" width="50%" height="50%">
 
@@ -12,7 +12,7 @@ As with most of the OSINT we started with a little search. Based on the given in
 
 So the flag based on the format is KCTF{192.99.167.83}. Wuhhu nice first 5 minutes of the event <img class="emoji" alt="robot" src="https://github.githubassets.com/images/icons/emoji/unicode/1f916.png" width="20" height="20">.
 
-# How's the Shark
+# <a name="How's_the_Shark"></a>How's the Shark
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Hows_the_Shark.png" alt="Hows the Shark" width="50%" height="50%">
 
@@ -26,7 +26,7 @@ You never know what chall creator think so we tried *KCTF{Fake_FLAG_LOL}, with n
 
 With that we had our flag *KCTF{A_ShaRk_iN_tHe_WirE}*
 
-# Keep Calculating
+# <a name="Keep_Calculating"></a>Keep Calculating
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Keep_Calculating.png" alt="Keep Calculating" width="50%" height="50%">
 
@@ -66,7 +66,7 @@ calc(a, x, y)
 
 P.S: Yes the import is missing and the flag is *KCTF{2666664}* 
 
-# Square Sum
+# <a name="Square_Sum"></a>Square Sum
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Square_Sum.png" alt="Square Sum" width="50%" height="50%">
 
@@ -85,7 +85,7 @@ myfunction <- function(n) {
 ```
 So the flag was *KCTF{90,130}*  
 
-# The Flag Vault
+# <a name="The_Flag_Vault"></a>The Flag Vault
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Flag_Vault.png" alt="The Flag Vault" width="50%" height="50%">
 
@@ -99,7 +99,7 @@ We saw in the decompiler view that it seemed to be an easy check wether you have
 
 So what we did was going over all the variables in the Congratulation part of the Programm and ended up with the flag *KCTF{welc0me_t0_reverse_3ngineering}*. So yeah we did not had the password but the patiences to go over each variable and check the value in it. Lucky us each variable was only one character so it did not matter which way you read out the Hex value.
 
-# The Hungry Dragon
+# <a name="The_Hungry_Dragon"></a>The Hungry Dragon
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_The_Hungry_Dragon.png" alt="The Hungry Dragon" width="50%" height="50%">
 
@@ -119,6 +119,6 @@ https://user-images.githubusercontent.com/87261585/151245913-7f715f6f-abbc-4824-
 
 As you could see we just needed to count the doughnut and sweets we found here which was pretty easy now. Based on the Flag format the flag was *KCTF{3_doughnut_and_11_sweet}*. We never did something with 3D prints but now we now how to read time, <img class="emoji" alt="stars" src="https://github.githubassets.com/images/icons/emoji/unicode/1f320.png" width="20" height="20"> Now you know <img class="emoji" alt="stars" src="https://github.githubassets.com/images/icons/emoji/unicode/1f320.png" width="20" height="20"> .
 
-# Conclusion
+# <a name="Conclusion"></a>Conclusion
 
 We learned a bit about stuff we never use again probably. You should never say never maybe the next big hack will be with 3D printers printing bitcoins for me on plastic, cause paper kills the planet. Lets see what comes next in this crazy ITSec world.
