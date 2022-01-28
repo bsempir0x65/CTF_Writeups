@@ -24,7 +24,7 @@ You never know what chall creator think so we tried *KCTF{Fake_FLAG_LOL}, with n
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Hows_the_Shark_2.png" alt="something" width="75%" height="75%">
 
-With that we had our flag *KCTF{A_ShaRk_iN_tHe_WirE} 
+With that we had our flag *KCTF{A_ShaRk_iN_tHe_WirE}*
 
 # Keep Calculating
 
