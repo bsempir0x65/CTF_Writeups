@@ -16,6 +16,16 @@ So the flag based on the format is KCTF{192.99.167.83}. Wuhhu nice first 5 minut
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Hows_the_Shark.png" alt="Hows the Shark" width="50%" height="50%">
 
+This time we got an pcap file to look into. When we first checked the TCP stream we found out that this was a capture of a client server connection to a webside. The first thing we checked was the easy one by searching for the flag via the flagformat *KCTF*. Funny enough the creators put a fake flag into the capture.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Hows_the_Shark.png" alt="Fake_FLAG_LOL" width="50%" height="50%">
+
+You never know what chall creator think so we tried *KCTF{Fake_FLAG_LOL}, with no success. Next step was that nothing was in String format we checked the files transfered during the connection by exporting all of them to our local drive. Lots of garbage in it but one which got our attention. Not sure why but something special was about it, something (⋆._.)⊃▁⛥⌒*ﾟ.❉・゜・。.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Hows_the_Shark.png" alt="something" width="50%" height="50%">
+
+With that we had our flag *KCTF{A_ShaRk_iN_tHe_WirE} 
+
 # Keep Calculating
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Keep_Calculating.png" alt="Keep Calculating" width="50%" height="50%">
