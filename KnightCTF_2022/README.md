@@ -6,8 +6,6 @@ A new Year a new CTF to challenge. This time we went to Bangladesh <img class="e
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Canada_Server.png" alt="Canada Server" width="50%" height="50%">
 
-![Canada Server](https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Canada_Server.png)
-
 As with most of the OSINT we started with a little search. Based on the given informations from the task we tried *NS TechValley Canada* and without further search we already had our first hit, literally.
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/KnightCTF_2022/img/KnightCTF_Canada_Server_1.png" alt="Google Search" width="50%" height="50%">
