@@ -690,4 +690,4 @@ So we had a running code and our internal tests showed that in small the program
 
 # <a name="Conclusion"></a>Conclusion
 
-It was a really fun experience even though in comparision to other CTFs not many people attended. Or only big teams but who knows. At least we had some fun at we defenitly check out the other write ups to improve our skills. We use this more as an log book not really a write up this time but heh *sharing is caring* (っ ͡❛ ᆽ ͡❛)っ
+It was a really fun experience even though in comparision to other CTFs not many people attended. Or only big teams but who knows. At least we had some fun at we defenitly check out the other write ups to improve our skills. We use this more as an log book not really a write up this time but heh *sharing is caring* (っ ͡❛ ᆽ ͡❛)っ. Hopefully we could help a student to get some insights how the pleps went for the challenge and maybe this will become a better world.
