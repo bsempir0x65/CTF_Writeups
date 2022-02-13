@@ -88,7 +88,7 @@ Based on the tip of the maker we uplouded the binary to [binary ninja](https://c
 
 As you can see we have slightly 3 different versions when we use the decompiler of each tool. You know what they say more tools = more fun. 
 But back to our plan what does the programm do ?
-Based on the outputs we have at the start a variable which is set to 1 and an endless loop until the the break signal is sent to the binary, we think. Next observation is that we have a check on __ctype_b_loc() with the value 0x2000 and if that is true it writes out the input it took to stdout or the console. If that is false depending on the first variable it either uses toupper on the input or tolower and set the original variable to 0. 
+Based on the outputs we have at the start a variable which is set to 1 and an endless loop until the the break signal is sent to the binary, we think. Next observation is that we have a check on \_\_ctype_b_loc() with the value 0x2000 and if that is true it writes out the input it took to stdout or the console. If that is false depending on the first variable it either uses toupper on the input or tolower and set the original variable to 0. 
 Cause we were not sure if we should uses imports or not, cause they were already given as the starter code, we decided to use the ida output as base cause it did not need any additional imports:
 ```C
 #include <ctype.h>
@@ -682,7 +682,7 @@ int v13; // [rsp+38h] [rbp-8h]
   return 0;
 }
 ```
-So we had a running code and our internal tests showed that in small the program we had is working. But we never looked into the disassembly per se. If you never had done in c++ before its kinda hard to figure the easy stuff like print something ... . So once we had that 3 test cases out of 5 went successful trough for us and in total we had 38% in this challenge. This was more than enough for a crash course in c++ . Unfourtnatly this time we did not really do reverse engineering it was more try and error like a programming exercise, with the difference that we started with a broken code. So like any tutor at unverisity once they have you to teach something and explain why your code is broken. (👍 ͡❛ ͜ʖ ͡❛)👍 love you all my tutors (👍 ͡❛ ͜ʖ ͡❛)👍
+So we had a running code and our internal tests showed that in small the program we had is working. But we never looked into the disassembly per se. If you never had done something in c++ before its kinda hard to figure the easy stuff like print something ... . So once we had that 3 test cases out of 5 went successful trough for us and in total we had 38% in this challenge. This was more than enough for a crash course in c++ . Unfourtnatly this time we did not really do reverse engineering it was more try and error like a programming exercise, with the difference that we started with a broken code. So like any tutor at unverisity once they have you to teach something and explain why your code is broken. (👍 ͡❛ ͜ʖ ͡❛)👍 love you all my tutors (👍 ͡❛ ͜ʖ ͡❛)👍
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/Decompetition_CTF_2022/img/blaise_result.png" alt="result" width="50%" height="50%">
 
