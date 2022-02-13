@@ -8,3 +8,6 @@
 
 ## KnightCTF2022
 [KnightCTF2022](https://bsempir0x65.github.io/CTF_Writeups/KnightCTF_2022/)
+
+## Decompetition2022
+[Decompetition2022](https://bsempir0x65.github.io/CTF_Writeups/Decompetition_CTF_2022/)
