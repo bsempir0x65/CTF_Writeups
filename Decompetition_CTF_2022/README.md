@@ -191,7 +191,7 @@ Based on the result we concluded the following:
 * Calls like this core::ptr::drop_in_place<std::env::Args>(local_c8); means that from the library core which has library ptr has function drop_in_place is loaded
 * The disassemble did not helped cause we rarely touched rust in the past and you should have a basic understanding of the compiler for this
 * Ohh and we have multiple functions to create ;-)
-* We still don't have a clue if this programm is safe or not sooo dynamic analysis was not an option __Disclaimer: Never execute something you don't know or trust.
+* We still don't have a clue if this programm is safe or not sooo dynamic analysis was not an option __Disclaimer: Never execute something you don't know or trust.__
 
 So from what we recalled back then and the first assemble statements
 
