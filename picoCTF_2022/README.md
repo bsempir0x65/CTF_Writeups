@@ -10,8 +10,7 @@ In this challenge we were given a binary with the task to get the flag with no f
 
 
 
-https://user-images.githubusercontent.com/87261585/161615150-41426360-4f0f-4ebd-a8c9-c26045a883e6.mp4
-
+https://user-images.githubusercontent.com/87261585/161619477-de535f17-2154-4d00-8c62-c74a28fcbe77.mp4
 
 
 # <a name="Canada_Server"></a>Canada Server
