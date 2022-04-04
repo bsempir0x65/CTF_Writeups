@@ -147,6 +147,6 @@ So the direct emulation seems not to work. At least for us we attached cutter to
 
 Once we had everything set up, we just needed to find the right address where our flag was. Luckily Cutter made a nice hint by pointing us to references where ascii signs were saved.
 
- <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/picoCTF_2022/img/Keygenme_cutter3.png" alt="Keygenme" width="50%" height="50%">
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/picoCTF_2022/img/Keygenme_cutter4.png" alt="Keygenme" width="50%" height="50%">
 
 In our case it was 0x7ffe5b280f48 and within the heydump view we had our key. Most of the time we had issues with our tools but heh next time we know where to click what and maybe it will be a nice opportunity next time to directly use radare2. Hope this different approach is a nice idea for a solution.
