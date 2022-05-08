@@ -380,9 +380,10 @@ undefined8 main(void)
 }
 ```
 Based on the comments above we concluded the following entry's in order for the flag:
-314159265 first number
-314159265 + x = 513371337 -> x = 199212072 second number
-"the airspeed velocity of an unladen swallow" third number without quotes
+
+1. 314159265 first number
+2. 314159265 + x = 513371337 -> x = 199212072 second number
+3. "the airspeed velocity of an unladen swallow" third number without quotes
 
 Which brings us
 ```console
