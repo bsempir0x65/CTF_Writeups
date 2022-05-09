@@ -222,7 +222,7 @@ Just to make it easy for everyone we caught it right at 5 seconds so for mplayer
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/AngstromCTF_2022/img/theflash2.png" alt="theflash2" width="50%" height="50%">
 
-And for everyone who does not want to type it out: act{sp33dy_l1ke_th3_fl4sh} . That's not the intended way but way funnier.
+And for everyone who does not want to type it out: actf{sp33dy_l1ke_th3_fl4sh} . That's not the intended way but way funnier.
 
 # <a name="Baby3"></a>Baby3
 
@@ -330,7 +330,6 @@ Again another little tool for us to challenge and once we have it we can check t
 The static analysis does a great job and we can see what we need to do in order to get the flag for convenience here is the decompiled code with some comments:
 
 ```C
-
 undefined8 main(void)
 
 {
@@ -345,11 +344,11 @@ undefined8 main(void)
   printf("Step right up and guess your first number: ");
   fflush(stdout);
   local_c = read_int();
-  if (local_c == 314159265) { <- we know that local_c is an int to this is an int check and we can convert the hex value in an int
+  if (local_c == 314159265) { <- we know that local_c is an int so this is an int check and we can convert the hex value in an int
     printf("That\'s great, but can you follow it up? ");
     fflush(stdout);
     local_10 = read_int();
-    if (local_10 + local_c == 513371337) { <- we know that local_10 + local_c is an int to this is an int check and we can convert the hex value in an int
+    if (local_10 + local_c == 513371337) { <- we know that local_10 + local_c is an int so this is an int check and we can convert the hex value in an int
       puts("That was the easy part. Now, what\'s the 42nd number of the Maltese alphabet?");
       getchar();
       fgets(local_58,0x40,stdin); <- takes our input
@@ -399,6 +398,90 @@ actf{it_turns_out_you_dont_need_source_huh}
 ```
 You could also create an easy script for that but meh was okay when you copy fast enough the answers o(^▽^)o
 
+# <a name="uninspired"></a>uninspired
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/AngstromCTF_2022/img/uninspired.png" alt="uninspired" width="50%" height="50%">
+
+So for this challenge we actually used binary ninja as a starting point.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/AngstromCTF_2022/img/uninspired1.png" alt="uninspired1" width="50%" height="50%">
+
+So we can already see that we have a loop and some if clauses here. So for better reading, we put the output here with our comments:
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/AngstromCTF_2022/img/uninspired2.png" alt="uninspired2" width="50%" height="50%">
+
+So the rest of the binary we did not figured out to what the loop is for. Probably we could have but meh we tought why not programm a brute forcer for this ? Maybe not the best idea if you have to guess a 10 digit number. So we did:
+
+```python
+#!/usr/bin/python
+
+import sys
+from pwn import *
+
+runvar = int(sys.argv[1])
+checksolution = ("yay I\'m inspired now, have a flag :)\n").encode('utf-8')
+endrunvar = runvar + 1125000000
+
+elf = ELF('./uninspired')
+
+while runvar < endrunvar:
+
+    io = elf.process()
+
+    print(io.recvline(timeout=2))
+
+    sendvar = (str(runvar) + "\n").encode('utf-8')
+
+    io.sendline(sendvar)
+
+    print (runvar)
+
+    if io.recvline(timeout=2) == checksolution:
+        print(runvar)
+        break
+    else:
+        print("nope")
+
+    io.close()
+
+    runvar = runvar + 1
+
+print("welcome to the end")
+```
+So you can see that we made the script in mind to run on multiple cores. Since we let it run for 10 minutes we saw that this will maybe not work out ((┌|o^▽^o|┘))♪ . We also saw that despite we closed the binary all the time we had a memory leakage issue here too. So in the end we did not solved the task.
+But after this CTF we found a writeup by TheBadGod [https://github.com/TheBadGod/Angstrom22-Writeups/tree/main/uninspired](https://github.com/TheBadGod/Angstrom22-Writeups/tree/main/uninspired) which brought us the solution 6210001000. So we put that number into our script and it worked ( ・・)つ-●●●.
+
+```console
+└─$ ./solution_multirun.py 6210000999
+[*] '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[+] Starting local process '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired': pid 2469
+b"there's no more inspiration :(\n"
+6210000999
+[*] Process '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired' stopped with exit code 1 (pid 2469)
+nope
+[+] Starting local process '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired': pid 2471
+b"there's no more inspiration :(\n"
+6210001000
+[*] Process '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired' stopped with exit code 0 (pid 2471)
+6210001000
+welcome to the end
+```
+So we got the solution number too which brings us the flag:
+
+```console
+└─$ ./uninspired                     
+there's no more inspiration :(
+6210001000
+yay I'm inspired now, have a flag :)
+actf{ten_digit_numbers_are_very_inspiring}
+```
+
+
 # <a name="Conclusion"></a>Conclusion
 
-We had some solves and we also had some fun. Maybe this helps someone who stucked at the start to get ideas for us it was a nice CTF. Thank you angstrom team for the nice 2 to 3 hours.
+We had some solves and we also had some fun. Maybe this helps someone who stucked at the start to get ideas, for us it was a nice CTF. Thank you angstrom team for the nice 2 to 3 hours.
