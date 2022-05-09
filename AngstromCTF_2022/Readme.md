@@ -453,21 +453,21 @@ But after this CTF we found a writeup by TheBadGod [https://github.com/TheBadGod
 
 ```console
 └─$ ./solution_multirun.py 6210000999
-[*] '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired'
+[*] 'uninspired'
     Arch:     amd64-64-little
     RELRO:    Partial RELRO
     Stack:    No canary found
     NX:       NX enabled
     PIE:      PIE enabled
-[+] Starting local process '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired': pid 2469
+[+] Starting local process 'uninspired': pid 2469
 b"there's no more inspiration :(\n"
 6210000999
-[*] Process '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired' stopped with exit code 1 (pid 2469)
+[*] Process 'uninspired' stopped with exit code 1 (pid 2469)
 nope
-[+] Starting local process '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired': pid 2471
+[+] Starting local process 'uninspired': pid 2471
 b"there's no more inspiration :(\n"
 6210001000
-[*] Process '/home/kali/CTF/CTF/AngstromCTF_2022/uninspired/uninspired' stopped with exit code 0 (pid 2471)
+[*] Process 'uninspired' stopped with exit code 0 (pid 2471)
 6210001000
 welcome to the end
 ```
