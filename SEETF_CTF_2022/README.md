@@ -1,13 +1,13 @@
 # <a name="SEETF"></a>Welcome to a new Challenge
 
-We went to a new Challenge from our friends the [Social Engineering Experts](https://ctftime.org/team/151372/). It was quite tuff bt what do you expect from experts <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>. So we tried our best and we were not that bad as before. So lets have a look into the easy challenges we managed to solve.
+We went to a new Challenge from our friends the [Social Engineering Experts](https://ctftime.org/team/151372/). It was quite tough bt what do you expect from experts <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>. So we tried our best and we were not that bad as before. So lets have a look into the easy challenges we managed to solve.
 
 # <a name="babyreeee"></a>babyreeee
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/babyreeee.png" alt="Babyre" width="50%" height="50%">
 
-So based on the description it seems to be a binary which just checks if we have the right flag. So we started to understand what this binary by loading it into[ghidra](https://ghidra-sre.org/), which gave us already some nice insights:
-Disclaimer: Never execute to something you don't know. So maybe not the best habit to have. But what could possible go wrong
+So based on the description it seems to be a binary which just checks if we have the right flag. So we started to understand what this binary does by loading it into[ghidra](https://ghidra-sre.org/), which gave us already some nice insights:
+Disclaimer: Never execute something you don't know. So maybe not the best habit to have. But what could possible go wrong
 
 >  uStack44 = 0x5e; //more values loaded into the stack above
 >  local_28 = 0x50;
@@ -44,13 +44,13 @@ Disclaimer: Never execute to something you don't know. So maybe not the best hab
 >  return 1;
 >}
 
-- [x] Figure out what to do
+- [x] Let's figure out what to do
 
-So clever people have either figured out how to convert (byte)(*pcVar1 + 0x45U ^ bVar3)) into a simple script and let it does the magic but we used something different here:
+So clever people have seem to have figured out how to convert (byte)(*pcVar1 + 0x45U ^ bVar3)) into a simple script and let it do the magic. But we used something different here:
 
 >printf("Flag check failed at index: %d",uVar6);
 
-every time the input does not match the right value the program tells us what was the index value of the error. This piece of information can be used as a checker if the input is correct and if so move to the next value. This dramatically reduces the time you need for a brute force attack. So thats what we did:
+every time the input does not match the right value the program tells us what was the index value of the error. This piece of information can be used as a checker if the input is correct and if so move to the next value. This dramatically reduces the time you need for a brute-force attack. So that's what we did:
 
 ```python
 #!/usr/bin/python
@@ -122,7 +122,7 @@ print(current_flag)
 
 So the FLAG is SEE{0n3_5m411_573p_81d215e8b81ae10f1c08168207fba396}
 
-On our system it took not so long to brute force the flag so it was doable during the challenge. Its also not the nicest script in the world but it got the job done and maybe this was even an unintentional solution for the creators. So if you ever stuck on such issues you can always fall back to the old ways of cracking things ヾ( ͝° ͜ʖ͡°)ノ♪. Regardless a little neat challenge.
+On our system it took not very long to brute force the flag so it was doable during the challenge. Its also not the nicest script in the world but it got the job done and maybe this was even an unintentional solution for the creators of the CTF. So if you're ever stuck on such issues you can always fall back to the old ways of cracking things ヾ( ͝° ͜ʖ͡°)ノ♪. Nevertheless it's a little neat challenge.
 
 - [x] Do the happy dance
 
@@ -132,33 +132,33 @@ On our system it took not so long to brute force the flag so it was doable durin
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/BestSoftware.png" alt="BestSoftware" width="50%" height="50%">
 
-This time we need to help out our man Gelos to get the License key for the Best Software around. So at first glance we saw that we got an .exe file so we run file on it to see what it is exactly:
+This time we need to help out our man Gelos to get the License key for the Best Software around. So at first glance we saw that we got an .exe file so we run "file" on it to see what it is exactly:
 
 ```console
 └─$ file BestSoftware.exe 
 BestSoftware.exe: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS Windows
 ```
 
-Hah a good old .Net executable (ｰ ｰ;). Cause we did not had a Windows system around we needed to setup first our Linux distro to work on this. So we need:
+Hah a good old .Net executable (ｰ ｰ;). Cause we did not have a Windows system around we needed to setup our Linux distro first to work on this. So we need:
 
 - [ ] A way to execute the binary
 - [ ] Inspect the PE 
 - [ ] Get the Flag
 
-So the easiest way probably would be to spin up windows for it but we found the following for each problem:
+So the easiest way probably would be to spin up windows for it but we found the following solutions for each problem:
 
 - [x] A way to execute the binary -> install mono for it. We used the mono-complete based on the description to ensure that everything works [mono](https://www.mono-project.com/download/stable/) 
-- [x] Inspect the PE -> We found a neat github project to brin ILSpy on Linux. Worked flawlessly [AvaloniaILSpy](https://github.com/icsharpcode/AvaloniaILSpy)  
+- [x] Inspect the PE -> We found a neat github project to bring ILSpy to Linux. Worked flawlessly [AvaloniaILSpy](https://github.com/icsharpcode/AvaloniaILSpy)  
 - [ ] Get the Flag -> thats the next part
 
 Okay so we had our setup so lets have a look into the file with ILSpy.
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/BestSoftware2.png" alt="BestSoftware" width="50%" height="50%">
 
-So we can see that the program is not too much of a hassle to go trough. In the main function we can see that we get asked the name and email we get from the challenge description and the searched license key. After that the Function CheckLicenseKey which takes our input and check if the SHA256 of our name + "1_l0v3_CSh4rp" + email matches the one we used as a license key. With that knowledge we just need to create the SHA256 like in the function CalculateSHA256 and we get our flag (Actually the flag is just the Licensekey so we do not actually run the program).
+Now we can see that the program is not too much of a hassle to go trough. In the main function we can see that we get asked the name and email we got from the challenge description and the searched license key. After that the Function CheckLicenseKey which takes our input and checks if the SHA256 of our name + "1_l0v3_CSh4rp" + email matches the one we used as a license key. With that knowledge we just need to create the SHA256 hash like in the function CalculateSHA256 and we get our flag. (Actually the flag is just the Licensekey so we do not actually run the program).
 
-So for that we just copied all the code we have into an online .Net compiler and instead of the check of the key we just write it out and voila. We called it the Keygenerator for the Best Software:
-Disclaimer: Never execute to something you don't know. So maybe not the best habit to have. But what could possible go wrong
+For that we just copied all the code we have into an online .Net compiler and instead of the check of the key we just write it out and voila. We called it the Keygenerator for the Best Software:
+Disclaimer: Never execute to something you don't know. So maybe not the best habit to have. But what could possible go wrong?
 
 ```csharp
 using System;
@@ -204,7 +204,7 @@ internal class Program
 }
 ```
 
-Sure every great software should have also a great [Keygenerator](https://dotnetfiddle.net/rNaB1H). So with the given name and email the Flag is: SEE{28F313A48C1282DF95E07BCEF466D19517587BCAB4F7A78532FA54AC6708444E} . Again i think the reverse challenges are done by us not the way it should be.
+Sure, every great software should have also a great [Keygenerator](https://dotnetfiddle.net/rNaB1H). So with the given name and email the Flag is: SEE{28F313A48C1282DF95E07BCEF466D19517587BCAB4F7A78532FA54AC6708444E} . Again I think the reverse challenges are done by us not the way they should be.
 
 - [x] Get the Flag 
 
@@ -297,9 +297,9 @@ if __name__ == '__main__':
         print("NOT READY YET. MAYBE AFTER CTF????")
 ```
 
-So we can see that multiple options are offered to us and that all of them except 4 just prints some text or exits the session. So lets have a closer look to number 4. We can see that another input question pops up. After that our input gets checked if any character was used which is part of FLAG_FILE which would be "F", "L", "A", "G" (if you ask yourself why it is this way just check [list-comprehensions](https://www.pythonforbeginners.com/basics/list-comprehensions-in-python) ). After that it checks if our input we gave for the article if it has any of these characters and if you print out the news and that WAYYANG sees us. If it does not find a not allowed character it trys to execute "cat {eval(filename)}". So the idea is to bypass that check.
+Here we can see that multiple options are offered to us and that all of them except "4" just prints some text or exits the session. So let's have a closer look onto number 4. We can see that another input question pops up. After that our input gets checked if any character was used which is part of FLAG_FILE which would be "F", "L", "A", "G" (if you ask yourself why it is this way just check [list-comprehensions](https://www.pythonforbeginners.com/basics/list-comprehensions-in-python) ). After that it checks our input we gave for the article if it has any of these characters and if you print out the news and that WAYYANG sees us. If it does not find a not allowed character it trys to execute "cat {eval(filename)}". So the idea is to bypass that check.
 
-Honestly there is probably a real hacky way but what we just used are [bash macros](https://www.gnu.org/software/bash/manual/html_node/Miscellaneous-Commands.html). So we put as an input * to get any content of any file in the current directory. This gave us an error in the first place the way input makes an object. To circumvent that we just put in '*' and voila we had it.
+Honestly there is probably a real hacky way but what we just used are [bash macros](https://www.gnu.org/software/bash/manual/html_node/Miscellaneous-Commands.html). So we put as an input "*" to get any content of any file in the current directory. This gave us an error in the first place because of the way "input" makes an object. To circumvent that we just put in '*' and voila we had it.
 
 ```console
 └─$ nc fun.chall.seetf.sg 50008
@@ -433,7 +433,7 @@ if __name__ == '__main__':
                                                
 ```
 
-Course we had some gubberish here but heh the assumption that the file is in the same directory worked and we probably have the shortest input solution (((o(*°▽°*)o))).
+Ofcourse we had some gubberish here but heh the assumption that the file is in the same directory worked and we probably have the shortest input solution (((o(*°▽°*)o))).
 Flag: SEE{wayyang_as_a_service_621331e420c46e29cfde50f66ad184cc}
 
 Buja already 3 down.
