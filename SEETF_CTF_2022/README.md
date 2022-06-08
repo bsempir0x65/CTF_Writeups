@@ -474,3 +474,62 @@ Weirdly the result seem still not to be perfect. But good enough to read the act
 
 Not sure what went wrong but if you read the other write ups from us then you see that we aim for good enough and not perfect (๑˃ᴗ˂)ﻭ
 
+# <a name="sniffedtraffic"></a>sniffedtraffic
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/sniffedtraffic.png" alt="sniffedtraffic" width="50%" height="50%">
+
+This time we got a nice pcap file to start wireshark up. When we first opened the file we saw over 4K packages ... . So lots of stuff to look into.
+So we went first to the export options to see if any useful files are there based on the description that a file was downloaded via File -> Export Objects -> HTTP
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/sniffedtraffic2.png" alt="sniffedtraffic2" width="50%" height="50%">
+
+Well well what do we see here ? a thingamajig.zip ( ͡ಠ ʖ̯ ͡ಠ) ROFL . Good start but when we tried to unzip it we were asked for a password. Since this is considered as an easy task we thought lets go trough the tcp streams and see if something is there.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/sniffedtraffic3.png" alt="sniffedtraffic3" width="50%" height="50%">
+
+Oho Passwords in clear text with a reference to [hunter2](https://knowyourmeme.com/memes/hunter2), we see what you did there. Okay once we had that a stuff file.
+
+```console
+└─$ file stuff_save      
+stuff_save: data
+```
+
+Hmm so just data. When we looked into the file via a text editor you can see that the strings flag.txt are visible. Since unzip has not worked on it we just used foremost to see if it finds something.
+
+```console
+└─$ cat audit.txt                                                     
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Fri Jun  3 22:37:24 2022
+Invocation: foremost stuff_save 
+Output directory: /home/kali/CTF/CTF/SEETF_CTF_2022/forensics_sniffed_traffic/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: stuff_save
+Start: Fri Jun  3 22:37:24 2022
+Length: 3 KB (3249 bytes)
+ 
+Num      Name (bs=512)         Size      File Offset     Comment 
+
+0:      00000001.zip          249 B            1000      
+Finish: Fri Jun  3 22:37:24 2022
+
+1 FILES EXTRACTED
+
+zip:= 1
+------------------------------------------------------------------
+```
+
+We are on something, let the hunt begin hunter2. Another zip again with a password. No further hints were found in the pcap so we tried good old brute forcing. For that we used [fcrackzip](https://www.kali.org/tools/fcrackzip/). We used the good old rockyoutxt wordlist and directly had luck:
+
+```console
+└─$ fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt 00000001.zip                                                   130 ⨯
+
+
+PASSWORD FOUND!!!!: pw == john
+```
+
+With that we could unzip again and got the flag.txt with the Flag: SEE{w1r35haRk_d0dod0_4c87be4cd5e37eb1e9a676e110fe59e3}
+
+It was a tedious task to find all these small steps but thats what the call brain fucking ( ͡~ ͜ʖ ͡~). If you did not got all small steps don't be sad it was tuff in our opinion too.
