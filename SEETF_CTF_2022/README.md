@@ -444,16 +444,16 @@ Buja already 3 down.
 
 So based on the text we need to help to get a paycheck back ??? （￣ε￣） . So we downloaded the attached files and we got a folder with the pieces of the paycheck. It was 1219 jpegs all named with xxx.xxx.jpg and 10x10 pixel big. Based on these facts we assumed that we need to order the jpges and make one picture of it again.
 
-We also assumed that the first part of the name would be the x coordinate of the small pic and the second one the y coordinate. With no clue how to make image magic we started googling around and found a tool called imagemagick. It also has a nice Feature called [Montage](https://imagemagick.org/Usage/montage/). It took us quite some time to figure out how to even use the tool and we had a little brain issue that we kept mixing x and y coordinates. So we only give you the important parts we found which you need to understand the solution
+We also assumed that the first part of the name would be the x coordinate of the small pic and the second one the y coordinate. With no clue how to make image magic we started googling around and found a tool called imagemagick. It also has a nice feature called [Montage](https://imagemagick.org/Usage/montage/). It took us quite some time to figure out how to even use the tool and we had a little "brain issue" that we kept mixing x and y coordinates. So we only give you the important parts we found which you need to understand the solution.
 
 1. Based on the names and the amount of files the result picture should have 530x220 pixels. This is based on the fact that one picture is 10x10 and the naming we saw. Having this in mind this means the tile operator should be 53x22
 2. We looked into one picture and we don't need any additional borders. Per default a border of 10 pixels is set by imagemagick. So we set it to +0+0.
-3. Same idea is for the background. We don't need one so none was the choice.
-4. The input imagemagick uses is based on the list given by bash. The files were sorted based on the x coordinate starting with 000. But Imagemagick adds picture to the right of the current picture until the column is full. After that it adds the column under the current one. But the list we get starts therefor on the bottom left instead of the top left we need. So we have to solutions. 
+3. Same idea is true for the background. We don't need one so none was the choice.
+4. The input imagemagick uses is based on the list given by bash. The files were sorted based on the x coordinate starting with 000. But Imagemagick adds picture to the right of the current picture until the column is full. After that it adds the column under the current one. But the list we get starts therefore on the bottom left instead of the top left wich we need. So we have two solutions. 
     * Either rotate the input images 90 degree or
     * sort the list based on the y coordinate starting with the top.
 
-So having this in mind we had as a first solution:
+So having this in mind we had the following as a first solution:
 
 ```console
 ./magick montage -tile 53x23 -geometry +0+0 -background none pieces/*.220.jpg pieces/*.210.jpg pieces/*.200.jpg pieces/*.190.jpg pieces/*.180.jpg pieces/*.170.jpg pieces/*.160.jpg pieces/*.150.jpg pieces/*.140.jpg pieces/*.130.jpg pieces/*.120.jpg pieces/*.110.jpg pieces/*.100.jpg pieces/*.090.jpg pieces/*.080.jpg pieces/*.070.jpg pieces/*.060.jpg pieces/*.050.jpg pieces/*.040.jpg pieces/*.030.jpg pieces/*.020.jpg pieces/*.010.jpg pieces/*.000.jpg test.jpg
@@ -472,29 +472,31 @@ Works perfectly the same and is a bit more elegant.
 
 Weirdly the result seem still not to be perfect. But good enough to read the actual flag: SEE{boss_aint_too_happy_bout_me_9379c958d872435} 
 
-Not sure what went wrong but if you read the other write ups from us then you see that we aim for good enough and not perfect (๑˃ᴗ˂)ﻭ
+Not sure what went wrong but if you read our other write-ups then you see that we aim for good enough and not perfect (๑˃ᴗ˂)ﻭ
 
 # <a name="sniffedtraffic"></a>sniffedtraffic
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/sniffedtraffic.png" alt="sniffedtraffic" width="50%" height="50%">
 
-This time we got a nice pcap file to start wireshark up. When we first opened the file we saw over 4K packages ... . So lots of stuff to look into.
+This time we got a nice pcap file to start wireshark up with. When we first opened the file we saw over 4K packages ... . So lots of stuff to look into.
 So we went first to the export options to see if any useful files are there based on the description that a file was downloaded via File -> Export Objects -> HTTP
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/sniffedtraffic2.png" alt="sniffedtraffic2" width="50%" height="50%">
 
-Well well what do we see here ? a thingamajig.zip ( ͡ಠ ʖ̯ ͡ಠ) ROFL . Good start but when we tried to unzip it we were asked for a password. Since this is considered as an easy task we thought lets go trough the tcp streams and see if something is there.
+Well well, what do we see here ? a thingamajig.zip ( ͡ಠ ʖ̯ ͡ಠ) ROFL . Good start, but when we tried to unzip it we were asked for a password. Since this is considered an easy task we thought: let's go trough the tcp streams and see if something is there.
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/sniffedtraffic3.png" alt="sniffedtraffic3" width="50%" height="50%">
 
-Oho Passwords in clear text with a reference to [hunter2](https://knowyourmeme.com/memes/hunter2), we see what you did there. Okay once we had that a stuff file.
+ahhhh..... Passwords in clear text with a reference to [hunter2](https://knowyourmeme.com/memes/hunter2), we see what you did there. ROFL 
+
+Okay once we had that, a "stuff" file came up.
 
 ```console
 └─$ file stuff_save      
 stuff_save: data
 ```
 
-Hmm so just data. When we looked into the file via a text editor you can see that the strings flag.txt are visible. Since unzip has not worked on it we just used foremost to see if it finds something.
+Hmm so just data. When we looked into the file via a text editor we saw that strings "flag.txt" are visible. Since unzip has not worked on it we just used "foremost" to see if it finds something.
 
 ```console
 └─$ cat audit.txt                                                     
@@ -520,8 +522,8 @@ Finish: Fri Jun  3 22:37:24 2022
 zip:= 1
 ------------------------------------------------------------------
 ```
-
-We are on something, let the hunt begin hunter2. Another zip again with a password. No further hints were found in the pcap so we tried good old brute forcing. For that we used [fcrackzip](https://www.kali.org/tools/fcrackzip/). We used the good old rockyoutxt wordlist and directly had luck:
+ 
+We are onto something, let the hunt begin hunter2. Another zip again with a password. No further hints were found in the pcap so we tried good old brute forcing. For that we used [fcrackzip](https://www.kali.org/tools/fcrackzip/). We used the good old rockyoutxt wordlist and had luck immediately :
 
 ```console
 └─$ fcrackzip -u -D -p /usr/share/wordlists/rockyou.txt 00000001.zip                                                   130 ⨯
@@ -530,20 +532,20 @@ We are on something, let the hunt begin hunter2. Another zip again with a passwo
 PASSWORD FOUND!!!!: pw == john
 ```
 
-With that we could unzip again and got the flag.txt with the Flag: SEE{w1r35haRk_d0dod0_4c87be4cd5e37eb1e9a676e110fe59e3}
+With that we could "unzip" again and got the flag.txt with the flag: SEE{w1r35haRk_d0dod0_4c87be4cd5e37eb1e9a676e110fe59e3}
 
-It was a tedious task to find all these small steps but thats what the call brain fucking ( ͡~ ͜ʖ ͡~). If you did not got all small steps don't be sad it was tuff in our opinion too.
+It was a tedious task to find all these small steps but that's what they call brain fucking ( ͡~ ͜ʖ ͡~). If you did not get all small steps don't be sad it was tough in our opinion too.
 
 # <a name="regex101"></a>regex101
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/regex101.png" alt="regex101" width="50%" height="50%">
 
-This was actual one of the challenges which did not really had to do something with hacking. This was more or less a training task to recognize that being able to use regex expressions can be crucial. Based on the name of the challenge we thought this was a hint to use the side [regex101](https://regex101.com/) so that what we did. So we cat the attached file to have all 2999 and copied them into regex101.
+This was actually one of the challenges which did not really have something to do with hacking. This was more or less a training task to recognize that being able to use regex expressions can be crucial. Based on the name of the challenge we thought this was a hint to use the site [regex101](https://regex101.com/) so that's what we did. So we "cat" the attached file to have all 2999 and copied them into regex101.
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/regex101_1.png" alt="regex101" width="50%" height="50%">
 
-As you can see in the Screenshot we already have only one match with the regex \[A-Z\]\{5\}\[1-9\]\{5\}\[A-Z\]\{6\} which brings us the flag SEE{RGSXG13841KLWIUO}. On the right side you also have a nice explanation why this regex matches and what the single parts do. Play around a bit with it and use the References or the regex quiz in the left side to improve your regex skills.
+As you can see in the Screenshot we already have only one match with the regex \[A-Z\]\{5\}\[1-9\]\{5\}\[A-Z\]\{6\} which brings us the flag SEE{RGSXG13841KLWIUO}. On the right side you also have a nice explanation why this regex matches and what the single parts do. Play around a bit with it and use the references or the regex quiz on the left side to improve your regex skills.
 
 # <a name="Conclusion"></a>Conclusion
 
-We had a lot of fun with these challenges and were also able to solve the one or the other ＠＾▽＾＠. We also were one of the lucky raffle winner thanks for that too. Overall also quite hard challenges so a good mix and we see but if time allows it we would be back 2023 again.
+We had a lot of fun with these challenges and were also able to solve the one or the other ＠＾▽＾＠. We also were one of the lucky raffle winners. Thanks for that too. Overall it were also quite hard challenges. It was a good mix and we'll see if time allows it we will be back again in 2023.
