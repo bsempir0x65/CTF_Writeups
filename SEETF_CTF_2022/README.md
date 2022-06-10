@@ -533,3 +533,17 @@ PASSWORD FOUND!!!!: pw == john
 With that we could unzip again and got the flag.txt with the Flag: SEE{w1r35haRk_d0dod0_4c87be4cd5e37eb1e9a676e110fe59e3}
 
 It was a tedious task to find all these small steps but thats what the call brain fucking ( ͡~ ͜ʖ ͡~). If you did not got all small steps don't be sad it was tuff in our opinion too.
+
+# <a name="regex101"></a>regex101
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/regex101.png" alt="regex101" width="50%" height="50%">
+
+This was actual one of the challenges which did not really had to do something with hacking. This was more or less a training task to recognize that being able to use regex expressions can be crucial. Based on the name of the challenge we thought this was a hint to use the side [regex101](https://regex101.com/) so that what we did. So we cat the attached file to have all 2999 and copied them into regex101.
+
+ <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/regex101_1.png" alt="regex101" width="50%" height="50%">
+
+As you can see in the Screenshot we already have only one match with the regex \[A-Z\]\{5\}\[1-9\]\{5\}\[A-Z\]\{6\} which brings us the flag SEE{RGSXG13841KLWIUO}. On the right side you also have a nice explanation why this regex matches and what the single parts do. Play around a bit with it and use the References or the regex quiz in the left side to improve your regex skills.
+
+# <a name="Conclusion"></a>Conclusion
+
+We had a lot of fun with these challenges and were also able to solve the one or the other ＠＾▽＾＠. We also were one of the lucky raffle winner thanks for that too. Overall also quite hard challenges so a good mix and we see but if time allows it we would be back 2023 again.
