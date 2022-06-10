@@ -549,4 +549,3 @@ As you can see in the Screenshot we already have only one match with the regex \
 # <a name="Conclusion"></a>Conclusion
 
 We had a lot of fun with these challenges and were also able to solve the one or the other ＠＾▽＾＠. We also were one of the lucky raffle winners. Thanks for that too. Overall it were also quite hard challenges. It was a good mix and we'll see if time allows it we will be back again in 2023.
-blub
