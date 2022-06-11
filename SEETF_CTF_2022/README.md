@@ -438,7 +438,7 @@ Flag: SEE{wayyang_as_a_service_621331e420c46e29cfde50f66ad184cc}
 
 Buja already 3 down.
 
-# <a name="angryzeyo2001"></a>angryzeyo2001
+# <a name="angryzeyu2001"></a>angryzeyu2001
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/angryzeyu2001.png" alt="angryzeyu2001" width="50%" height="50%">
 
@@ -449,7 +449,7 @@ We also assumed that the first part of the name would be the x coordinate of the
 1. Based on the names and the amount of files the result picture should have 530x220 pixels. This is based on the fact that one picture is 10x10 and the naming we saw. Having this in mind this means the tile operator should be 53x22
 2. We looked into one picture and we don't need any additional borders. Per default a border of 10 pixels is set by imagemagick. So we set it to +0+0.
 3. Same idea is true for the background. We don't need one so none was the choice.
-4. The input imagemagick uses is based on the list given by bash. The files were sorted based on the x coordinate starting with 000. But Imagemagick adds picture to the right of the current picture until the column is full. After that it adds the column under the current one. But the list we get starts therefore on the bottom left instead of the top left wich we need. So we have two solutions. 
+4. The input imagemagick uses is based on the list given by bash. The files were sorted based on the x coordinate starting with 000. But Imagemagick adds picture to the right of the current picture until the column is full. After that it adds the column under the current one. But the list we get starts therefore on the bottom left instead of the top left which we need. So we have two solutions. 
     * Either rotate the input images 90 degree or
     * sort the list based on the y coordinate starting with the top.
 
