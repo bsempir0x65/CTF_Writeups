@@ -10,39 +10,73 @@ So based on the description it seems to be a binary which just checks if we have
 Disclaimer: Never execute something you don't know. So maybe not the best habit to have. But what could possible go wrong
 
 >  uStack44 = 0x5e; //more values loaded into the stack above
+
 >  local_28 = 0x50;
+
 >  uStack36 = 0x86;
+
 >  uStack32 = 0x89;
+
 >  uStack28 = 0x89;
+
 >  local_18 = 0x48;
+
 >  uStack20 = 0x4f;
+
 >  uStack16 = 0x49;
+
 >  uStack12 = 0xf1;
+
 >  fgets(local_158,0x80,stdin); //here we get asked for our input
+
 >  sVar4 = strlen(local_158); // gets the length of our input
+
 >  if (sVar4 == 0x35) { // 0x35 in decimal is 53 , since we put \n as our input by pressing enter we are searching for a 52 length value 
+
 >    puts("Good work! Your flag is the correct size.");
+
 >    puts("On to the flag check itself...");
+
 >    sVar4 = strlen(local_158);
+
 >    uVar5 = 0;
+
 >    do {
+
 >      uVar6 = uVar5 & 0xffffffff;
+
 >      if (sVar4 - 1 == uVar5) {
+
 >        puts("Success! Go get your points, champ.");
+
 >        return 0;
+
 >      }
+
 >      pcVar1 = local_158 + uVar5; // loads our input
+
 >      puVar2 = local_d8 + uVar5; // loads a value from above
+
 >      bVar3 = (byte)uVar5;
+
 >      uVar5 = uVar5 + 1;
+
 >    } while ((byte)*puVar2 == (byte)(*pcVar1 + 0x45U ^ bVar3)); // does a check if the input we gave after transformation is equal to the loaded value
+
 >    printf("Flag check failed at index: %d",uVar6);
+
 >  }
+
 >  else {
+
 >    printf("Flag wrong. Try again.");
+
 >  }
+
 >  return 1;
+
 >}
+
 
 - [x] Let's figure out what to do
 
