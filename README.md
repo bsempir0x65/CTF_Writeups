@@ -14,3 +14,6 @@
 
 ## AngstromCTF2022
 [AngstromCTF2022](https://bsempir0x65.github.io/CTF_Writeups/AngstromCTF_2022/)
+
+## VUCyberthon2023
+[VUCyberthon2023](https://bsempir0x65.github.io/CTF_Writeups/VU_Cyberthon_2023)
