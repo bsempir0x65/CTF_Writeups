@@ -1,3 +1,24 @@
+- [Forensics here we come](#forensics-here-we-come)
+- [Authors mistake](#authors-mistake)
+- [Find location](#find-location)
+- [What is SHA1 checksum of image file blk0\_mmcblk0.bin?](#what-is-sha1-checksum-of-image-file-blk0_mmcblk0bin)
+- [What is the name of the largest partition?](#what-is-the-name-of-the-largest-partition)
+- [What is the brand (vendor) of phone?](#what-is-the-brand-vendor-of-phone)
+- [What is the model of phone?](#what-is-the-model-of-phone)
+- [What is the IMEI number of the phone?](#what-is-the-imei-number-of-the-phone)
+- [What is the SIM card number (ICCID) used on the phone?](#what-is-the-sim-card-number-iccid-used-on-the-phone)
+- [What is a name of audio file which is related with rifles and their price?](#what-is-a-name-of-audio-file-which-is-related-with-rifles-and-their-price)
+- [What is a name of video file which is related with tanks?](#what-is-a-name-of-video-file-which-is-related-with-tanks)
+- [What email address is setup on com.android.email service?](#what-email-address-is-setup-on-comandroidemail-service)
+- [What is a Name of device user?](#what-is-a-name-of-device-user)
+- [What is a Username of telegram messenger?](#what-is-a-username-of-telegram-messenger)
+- [Find the contact related to Russia?](#find-the-contact-related-to-russia)
+- [Find the contact related to Belarus?](#find-the-contact-related-to-belarus)
+- [What was the Bluetooth MAC Address of the device?](#what-was-the-bluetooth-mac-address-of-the-device)
+- [What is the name of WhatsApp user which has phone number +37062166565?](#what-is-the-name-of-whatsapp-user-which-has-phone-number-37062166565)
+- [Based on the analysis of the video file 20221015\_173902.mp4, please provide the GPS coordinates of the possible place, where video was recorded?](#based-on-the-analysis-of-the-video-file-20221015_173902mp4-please-provide-the-gps-coordinates-of-the-possible-place-where-video-was-recorded)
+- [Own Opinion](#own-opinion)
+
 # <a name="Forensics here we come"></a>Forensics here we come
 
 This Write up is more in an form of an dairy entry for the day rather a clear solution description for each task. Reason for that is quite simple. Once we started the CTF we went along doing mostly only the Forensics tasks. But maybe this helps someone to get an idea what we did and what we found. Also it is tuff to say in which order we did the CTF Questions so please be aware, that you might want to use the search function.
@@ -22,7 +43,7 @@ A quick and nice challenge.
 
 In the next one we got a pic and the goal to find the flag in the location of the pic.
 
-<img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/VU_Cyberthon_2023/img/Location.png" alt="Location" width="75%" height="75%">
+<img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/VU_Cyberthon_2023/img/Location.jpeg" alt="Location" width="75%" height="75%">
 
 You can see here an location in the pic, which probably should be the bait that you actually try to find that location which you see in the pic (＃￣ω￣).
 What we did was to use the tool [exiftool](https://exiftool.org/) to check the meta data of the pic which most of the time has a location information in it.
@@ -83,7 +104,7 @@ For the brand (vendor) of the phone we looked into the metadata which had the br
 
 <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/VU_Cyberthon_2023/img/metadata.png" alt="metadata" width="75%" height="75%">
 
-Funny when we tried "Samsung" as the solution we were told that this is wrong (╥﹏╥) :trollface: . Next we tried "samsung" which then was right (⊙.⊙(☉̃ₒ☉)⊙.⊙). We learned that we probably found the solution in not the intended way ?? Whatever Flag: **samsung**
+Funny when we tried "Samsung" as the solution we were told that this is wrong (╥﹏╥) <img class="emoji" title=":trollface:" alt=":trollface:" src="https://github.githubassets.com/images/icons/emoji/trollface.png" width="20" height="20" align="absmiddle">. Next we tried "samsung" which then was right (⊙.⊙(☉̃ₒ☉)⊙.⊙). We learned that we probably found the solution in not the intended way ?? Whatever Flag: **samsung**
 
 # <a name="What is the model of phone?"></a>What is the model of phone?
 
@@ -95,7 +116,7 @@ And we got it **SM-G530FZ**. Also we found the right way probably to find the ve
 
 # <a name="What is the IMEI number of the phone?"></a>What is the IMEI number of the phone?
 
-Again we had no clue where to look at. So this time we just used the search function of Autopsy in the hope that IMEI is a used phrase also within the phone. You know developer using not some weird names for the stuff :v:.
+Again we had no clue where to look at. So this time we just used the search function of Autopsy in the hope that IMEI is a used phrase also within the phone. You know developer using not some weird names for the stuff <img class="emoji" alt="v" src="https://github.githubassets.com/images/icons/emoji/unicode/270c.png" width="20" height="20">.
 
 <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/VU_Cyberthon_2023/img/phone_imei.png" alt="phone_imei" width="75%" height="75%">
 
@@ -105,7 +126,7 @@ Flag: **351705072369910**
 
 # <a name="What is the SIM card number (ICCID) used on the phone?"></a>What is the SIM card number (ICCID) used on the phone?
 
-We used the same trick and searched for ICCID. No luck this time, cause we only found some logs hinting that there is an ICCID number existing. We remembered then that within that image some parts might be lowercase and some are uppercase when we look back at the brand question. So we then used "iccid" as a search term and viola :bowtie::
+We used the same trick and searched for ICCID. No luck this time, cause we only found some logs hinting that there is an ICCID number existing. We remembered then that within that image some parts might be lowercase and some are uppercase when we look back at the brand question. So we then used "iccid" as a search term and viola <img class="emoji" title=":bowtie:" alt=":bowtie:" src="https://github.githubassets.com/images/icons/emoji/bowtie.png" width="20" height="20" align="absmiddle">:
 
 <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/VU_Cyberthon_2023/img/phone_iccid.png" alt="phone_iccid" width="75%" height="75%">
 
@@ -145,7 +166,7 @@ So after some searching around in the net, there should be something called acco
 
 <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/VU_Cyberthon_2023/img/phone_john.png" alt="phone_john" width="75%" height="75%">
 
-So we found **John** which was wrong. But we remembered and tried **john** which then was correct (ｰ ｰ;) :rage1:. So that was definitely not the right way to find that account. We were only able to pull that off cause it were only 5 accounts existing on that device and the whats app acc and the signal acc were for sure wrong. So not to many traces to search for which made it possible.
+So we found **John** which was wrong. But we remembered and tried **john** which then was correct (ｰ ｰ;) <img class="emoji" title=":rage1:" alt=":rage1:" src="https://github.githubassets.com/images/icons/emoji/rage1.png" width="20" height="20" align="absmiddle">. So that was definitely not the right way to find that account. We were only able to pull that off cause it were only 5 accounts existing on that device and the whats app acc and the signal acc were for sure wrong. So not to many traces to search for which made it possible.
 
 Once we had john we searched with that and which lead us to /userdata/system/users/0.xml which contained the local device user again with uppercase John but that would probably the right place to search instead our weird journey with some luck that the dynamite app stores that information's.
 
@@ -181,7 +202,7 @@ So we used our OSINT skills to figure out that this information should be in a f
 
 The ID according to the file is **e0:99:71:8e:05:d0** but the expected solution is in uppercase **E0:99:71:8E:05:D0**. No clue why this keeps happening.
 
-We were very near to the end of the event so last ones were reaaally quick ones :running:. 
+We were very near to the end of the event so last ones were reaaally quick ones <img class="emoji" alt="runner" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3c3.png" width="20" height="20">. 
 
 # <a name="What is the name of WhatsApp user which has phone number +37062166565?"></a>What is the name of WhatsApp user which has phone number +37062166565?
 
@@ -217,5 +238,6 @@ We really liked this CTF cause it has kind of one case guiding you trough an inv
 
 
 helper found after the event:
+
 https://cts-forensics.com/reports/20-5550_Web.pdf
 https://github.com/daffainfo/ctf-writeup/tree/main/VU%20CYBERTHON%202023/What%20tank%20specs%20the%20user%20was%20looking%20for
