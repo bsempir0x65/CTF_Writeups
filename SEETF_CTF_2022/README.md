@@ -1,13 +1,17 @@
 # <a name="SEETF"></a>Welcome to a new Challenge
 
-We went to a new Challenge from our friends the [Social Engineering Experts](https://ctftime.org/team/151372/). It was quite tough bt what do you expect from experts <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji>. So we tried our best and we were not that bad as before. So lets have a look into the easy challenges we managed to solve.
+So we took on this new challenge from our pals, the [Social Engineering Experts](https://ctftime.org/team/151372/). Gotta admit, it was pretty tough - I mean, they're experts, right? <g-emoji class="g-emoji" alias="tada" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png">🎉</g-emoji> But we gave it our best shot and we actually did better than we expected. Check it out, we even nailed some of the easier challenges!
+
+
 
 # <a name="babyreeee"></a>babyreeee
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/babyreeee.png" alt="Babyre" width="50%" height="50%">
 
-So based on the description it seems to be a binary which just checks if we have the right flag. So we started to understand what this binary does by loading it into[ghidra](https://ghidra-sre.org/), which gave us already some nice insights:
-Disclaimer: Never execute something you don't know. So maybe not the best habit to have. But what could possible go wrong
+So based on the description, it looks like this binary just checks if we've got the right flag. We loaded it up in [ghidra](https://ghidra-sre.org/), which gave us some pretty sweet insights already:
+
+Disclaimer: You should never execute something if you don't know what it does. But hey, we're rebels, so who cares, right? What's the worst that could happen?
+
 
 >  uStack44 = 0x5e; //more values loaded into the stack above
 
@@ -80,11 +84,12 @@ Disclaimer: Never execute something you don't know. So maybe not the best habit 
 
 - [x] Let's figure out what to do
 
-So clever people have seem to have figured out how to convert (byte)(*pcVar1 + 0x45U ^ bVar3)) into a simple script and let it do the magic. But we used something different here:
+So apparently, some smart cookies managed to convert `(byte)(*pcVar1 + 0x45U ^ bVar3))` into a simple script and let it work its magic. But we took a different approach here:
 
 >printf("Flag check failed at index: %d",uVar6);
 
-every time the input does not match the right value the program tells us what was the index value of the error. This piece of information can be used as a checker if the input is correct and if so move to the next value. This dramatically reduces the time you need for a brute-force attack. So that's what we did:
+So every time the input doesn't match the right value, the program tells us the index value of the error. This little tidbit of information can be used as a checker to verify if the input is correct, and if it is, move on to the next value. It really cuts down the time needed for a brute-force attack. And that's exactly what we did:
+
 
 ```python
 #!/usr/bin/python
@@ -156,7 +161,7 @@ print(current_flag)
 
 So the FLAG is SEE{0n3_5m411_573p_81d215e8b81ae10f1c08168207fba396}
 
-On our system it took not very long to brute force the flag so it was doable during the challenge. Its also not the nicest script in the world but it got the job done and maybe this was even an unintentional solution for the creators of the CTF. So if you're ever stuck on such issues you can always fall back to the old ways of cracking things ヾ( ͝° ͜ʖ͡°)ノ♪. Nevertheless it's a little neat challenge.
+On our system, it didn't take too long to brute force the flag, so we were able to pull it off during the challenge. It may not be the prettiest script in the world, but it did the job, and who knows, maybe it was even an unintentional solution for the creators of the CTF. Sometimes you just have to fall back on the old ways of cracking things ¯\\\_(ツ)\_/¯. Nonetheless, it was a pretty neat challenge.
 
 - [x] Do the happy dance
 
@@ -166,33 +171,36 @@ On our system it took not very long to brute force the flag so it was doable dur
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/BestSoftware.png" alt="BestSoftware" width="50%" height="50%">
 
-This time we need to help out our man Gelos to get the License key for the Best Software around. So at first glance we saw that we got an .exe file so we run "file" on it to see what it is exactly:
+This time around, we had to help our buddy Gelos get the license key for the best software around. At first glance, we noticed that we had an .exe file, so we ran "file" on it to get some more information:
 
 ```console
 └─$ file BestSoftware.exe 
 BestSoftware.exe: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS Windows
 ```
 
-Hah a good old .Net executable (ｰ ｰ;). Cause we did not have a Windows system around we needed to setup our Linux distro first to work on this. So we need:
+Haha, a good old .Net executable (ｰ ｰ;)! Since we didn't have a Windows system handy, we had to set up our Linux distro first to work on this. Here's what we needed:
 
 - [ ] A way to execute the binary
 - [ ] Inspect the PE 
 - [ ] Get the Flag
 
-So the easiest way probably would be to spin up windows for it but we found the following solutions for each problem:
+The easiest solution would have been to just spin up Windows, but we found some workarounds for each problem:
 
 - [x] A way to execute the binary -> install mono for it. We used the mono-complete based on the description to ensure that everything works [mono](https://www.mono-project.com/download/stable/) 
 - [x] Inspect the PE -> We found a neat github project to bring ILSpy to Linux. Worked flawlessly [AvaloniaILSpy](https://github.com/icsharpcode/AvaloniaILSpy)  
 - [ ] Get the Flag -> thats the next part
 
-Okay so we had our setup so lets have a look into the file with ILSpy.
+Alright, with our setup complete, it was time to take a look at the file with ILSpy.
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/BestSoftware2.png" alt="BestSoftware" width="50%" height="50%">
 
-Now we can see that the program is not too much of a hassle to go trough. In the main function we can see that we get asked the name and email we got from the challenge description and the searched license key. After that the Function CheckLicenseKey which takes our input and checks if the SHA256 of our name + "1_l0v3_CSh4rp" + email matches the one we used as a license key. With that knowledge we just need to create the SHA256 hash like in the function CalculateSHA256 and we get our flag. (Actually the flag is just the Licensekey so we do not actually run the program).
+Now we can see that the program is not too much of a hassle to go through. In the main function, we are asked to provide our name,email and a license key. Then, the function CheckLicenseKey is called with our input as an argument, which checks if the SHA256 hash of our name + "1_l0v3_CSh4rp" + email matches the expected license key. We can calculate the SHA256 hash of our input using the function CalculateSHA256, and this will give us the license key we need to complete the challenge.
 
-For that we just copied all the code we have into an online .Net compiler and instead of the check of the key we just write it out and voila. We called it the Keygenerator for the Best Software:
-Disclaimer: Never execute to something you don't know. So maybe not the best habit to have. But what could possible go wrong?
+
+For that, we simply copied all the code we had into an online .Net compiler and modified the main function to output the license key instead of checking it. Then we ran the program and got the license key. We called it the Keygenerator for the Best Software. It was a simple solution, but it got the job done. 
+
+Disclaimer: Never execute something you don't know. So maybe not the best habit to have. But what could possibly go wrong?
+
 
 ```csharp
 using System;
@@ -331,7 +339,10 @@ if __name__ == '__main__':
         print("NOT READY YET. MAYBE AFTER CTF????")
 ```
 
-Here we can see that multiple options are offered to us and that all of them except "4" just prints some text or exits the session. So let's have a closer look onto number 4. We can see that another input question pops up. After that our input gets checked if any character was used which is part of FLAG_FILE which would be "F", "L", "A", "G" (if you ask yourself why it is this way just check [list-comprehensions](https://www.pythonforbeginners.com/basics/list-comprehensions-in-python) ). After that it checks our input we gave for the article if it has any of these characters and if you print out the news and that WAYYANG sees us. If it does not find a not allowed character it trys to execute "cat {eval(filename)}". So the idea is to bypass that check.
+Here we can see that multiple options are offered to us and that all of them except option 4 just prints some text or exits the session. 
+Option 4 asks for another input and checks if any character in the input is part of the string "FLAG_FILE", which consists of the characters "F", "L", "A", and "G". It then checks if any of those characters are in the input we gave for the article, and if so, it prints out some news about WAYYANG seeing us.
+If the input does not contain any forbidden characters, the program tries to execute "cat {eval(filename)}". Our goal is to bypass the forbidden character check to execute this command and retrieve the flag.
+
 
 Honestly there is probably a real hacky way but what we just used are [bash macros](https://www.gnu.org/software/bash/manual/html_node/Miscellaneous-Commands.html). So we put as an input "*" to get any content of any file in the current directory. This gave us an error in the first place because of the way "input" makes an object. To circumvent that we just put in '*' and voila we had it.
 
@@ -467,7 +478,7 @@ if __name__ == '__main__':
                                                
 ```
 
-Ofcourse we had some gubberish here but heh the assumption that the file is in the same directory worked and we probably have the shortest input solution (((o(*°▽°*)o))).
+Although we had some gibberish in the output, our assumption that the flag file is located in the same directory as the script turned out to be correct. It is worth noting that our input solution is probably the shortest possible one. (((o(*°▽°*)o))).
 Flag: SEE{wayyang_as_a_service_621331e420c46e29cfde50f66ad184cc}
 
 Buja already 3 down.
@@ -476,9 +487,9 @@ Buja already 3 down.
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/angryzeyu2001.png" alt="angryzeyu2001" width="50%" height="50%">
 
-So based on the text we need to help to get a paycheck back ??? （￣ε￣） . So we downloaded the attached files and we got a folder with the pieces of the paycheck. It was 1219 jpegs all named with xxx.xxx.jpg and 10x10 pixel big. Based on these facts we assumed that we need to order the jpges and make one picture of it again.
+Alright, so we've got this situation where someone needs our help getting their paycheck back (seriously, what kind of mess did they get themselves into?). Anyway, we downloaded the files they sent us and it turned out to be a folder with over 1200 tiny JPEG images, each only 10x10 pixels in size and named with a three-digit number followed by ".jpg". Given these details, we figured we needed to somehow sort and arrange the images to reconstruct the original picture.
 
-We also assumed that the first part of the name would be the x coordinate of the small pic and the second one the y coordinate. With no clue how to make image magic we started googling around and found a tool called imagemagick. It also has a nice feature called [Montage](https://imagemagick.org/Usage/montage/). It took us quite some time to figure out how to even use the tool and we had a little "brain issue" that we kept mixing x and y coordinates. So we only give you the important parts we found which you need to understand the solution.
+So, we assumed that the first part of the name would be the x-coordinate of the small picture and the second part would be the y-coordinate. However, with no idea how to use image manipulation tools, we had to do some research and found a tool called ImageMagick. We discovered that it has a useful feature called [Montage](https://imagemagick.org/Usage/montage/), but it took us some time to figure out how to use it. Additionally, we had a bit of trouble distinguishing between the x and y coordinates. We'll provide you with the essential details of what we learned, so you can understand our solution.
 
 1. Based on the names and the amount of files the result picture should have 530x220 pixels. This is based on the fact that one picture is 10x10 and the naming we saw. Having this in mind this means the tile operator should be 53x22
 2. We looked into one picture and we don't need any additional borders. Per default a border of 10 pixels is set by imagemagick. So we set it to +0+0.
@@ -512,8 +523,7 @@ Not sure what went wrong but if you read our other write-ups then you see that w
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/sniffedtraffic.png" alt="sniffedtraffic" width="50%" height="50%">
 
-This time we got a nice pcap file to start wireshark up with. When we first opened the file we saw over 4K packages ... . So lots of stuff to look into.
-So we went first to the export options to see if any useful files are there based on the description that a file was downloaded via File -> Export Objects -> HTTP
+We opened the pcap file with Wireshark and found over 4,000 packets, which seemed like a lot to go through. To save time, we checked the export options to see if any useful files were there, as the description indicated that a file was downloaded via File -> Export Objects -> HTTP.
 
  <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/SEETF_CTF_2022/img/sniffedtraffic2.png" alt="sniffedtraffic2" width="50%" height="50%">
 
