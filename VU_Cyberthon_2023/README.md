@@ -21,13 +21,13 @@
 
 # <a name="Forensics here we come"></a>Forensics here we come
 
-This Write up is more in an form of an dairy entry for the day rather a clear solution description for each task. Reason for that is quite simple. Once we started the CTF we went along doing mostly only the Forensics tasks. But maybe this helps someone to get an idea what we did and what we found. Also it is tuff to say in which order we did the CTF Questions so please be aware, that you might want to use the search function.
+So basically, we didn't really follow a structured approach to the CTF and instead focused mostly on the Forensics tasks. This write-up is more like a diary entry of what we did and what we found. We can't really say in which order we tackled the tasks, so you might want to use the search function if you're looking for something specific. Hopefully, our experience will help someone out there!
 
 So we started the ctf by looking in the first Forensic task and saw a little story tied to it + an image file + a recommended tool set by the creators of the CTF for reference this was the provided tool set:
 
 <img src="https://raw.githubusercontent.com/bsempir0x65/CTF_Writeups/main/VU_Cyberthon_2023/img/ctf_tool_set.png" alt="ctf_tool_set" width="50%" height="50%">
 
-Funny part, we used during the task none of these tools ヽ(o＾▽＾o)ノ. Reason for that is that [Autopsy](https://www.autopsy.com/) has kind of all built in what the different tools provide. BUT we really appreciate that the creator of the ctf provided a basic tool set which you can use to solve all questions. Thanks for that. Also what we used as a base was a [Flare VM](https://github.com/mandiant/flare-vm), so we were prepared.
+So the funny part is that we didn't actually use any of the tools provided during the task ヽ(o＾▽＾o)ノ. We found that [Autopsy](https://www.autopsy.com/) pretty much had everything built-in that the different tools provided. However, we really appreciate the fact that the creator of the CTF provided a basic tool set that can be used to solve all the questions. Thanks for that! We also used a [Flare VM](https://github.com/mandiant/flare-vm) as our base, so we were well-prepared.
 
 Then we saw that the other questions to forensics were all connected to the image and the image is 2.6 gig big which took a bit of time for us, so we let it run and went to the first OSINT question
 
